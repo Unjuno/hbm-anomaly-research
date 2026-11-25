@@ -1,9 +1,25 @@
 # Contributing
 
-The main contribution is a better supported prediction: a new source, ordinary explanation, candidate, lot mechanism, or reason to reverse two ranks. Start with the **New candidate / prediction / source correction** issue template and [ranking method](docs/ranking-method.md). Hardware ownership is not required. Keep observed specifications separate from conditional capacity scenarios; explain which premise changed before changing a rank. Use source IDs, original units and dated provenance.
+[日本語の参加案内](docs/call-for-participants.ja.md) · [Evidence requests](docs/call-for-participants.md) · [Current ranking](docs/current-ranking.md)
 
-Existing hardware owners can additionally contribute stock observations or independent results. Read [validation](docs/validation.md) for those reports. If proposing an empirical comparison, use the **Bounded study proposal** template and [study design](docs/study-design.md) to set its target, baseline and stopping rules before interpreting outcomes. These requirements apply to an empirical study, not to publishing a clearly labeled theoretical forecast. Retain negative and uncertain results. For lot reports record the manufacturing stage, date range/source, memory-part identification and repair history; see [lot history](docs/lot-history.md). Historical context, predictions and actual sample observations have separate ledgers.
+The main contribution is a better supported prediction: one original source, ordinary explanation, candidate, lot mechanism, or premise that changes the ranking. **Hardware ownership is optional.**
 
-Only publish data you are entitled to share. Redact device serials, UUIDs, hostnames, account information, identifiers of other people and location details. Do not submit proprietary firmware, vendor binaries, secrets or exploit instructions. If a potential vulnerability is found, follow [SECURITY.md](SECURITY.md). No requests to bypass security or permanent device modifications are accepted. Code submissions must run offline and must not write to hardware.
+Use **Quick evidence / counterexample** for a short first report. Give the target, what you actually observed, its source/provenance, and which claim it supports or challenges. Unknown fields may stay unknown. The detailed **New candidate / prediction / source correction** template is available for fuller proposals.
 
-Use plain, respectful technical discourse; no harassment, solicitation to speculate in scarce hardware, or unsubstantiated claims of misconduct. Changes to evidence status need an auditable reason. By submitting original contributions you agree to the repository's MIT license; third-party material retains its applicable license.
+Keep facts, deductions and hypotheses separate. Conditional capacity belongs in hypothesis fields, never in measured-capacity fields. Source IDs support the inputs rather than the forecast. Rank tiers in `data/current_ranking.csv` are comparative judgments about physical-hypothesis specificity, not recovery probabilities. State the changed premise before revising a tier.
+
+## Existing owners
+
+Use **Hardware observation (read-only)** for existing stock information. A normal driver capacity display identifies a configuration; it does not refute hidden physical population. Identified part density and population may refute an excess construction for that unit. Retain negative and uncertain results.
+
+Record exact units, environment, virtual versus physical allocation, available board/part identity, and repair history. Dates need their manufacturing stage and provenance; unknown manufacture dates must not be replaced by sale or firmware dates. Do not silently move a rejected hypothesis to another unnamed lot.
+
+The [validation guide](docs/validation.md) and [study design](docs/study-design.md) are optional supporting resources for actual hardware claims. A bounded empirical study needs its scope, baseline and stopping rules; a theoretical contribution does not need to complete one.
+
+## Independent evidence and public information
+
+A repost of one experiment is still one underlying observation. Cite the original record and describe any independent replication. A seller or article repeating this repository does not corroborate its predictions. Publication itself may influence prices; see [market evidence](docs/market.md).
+
+Only publish information you are entitled to share. Remove serials, UUIDs, hostnames, account information and other personal identifiers. No proprietary binaries or secrets. Follow [SECURITY.md](SECURITY.md) for any potential vulnerability; the project does not request security bypasses or permanent device changes. Code submissions must run offline and must not write to hardware.
+
+Use respectful technical criticism and preserve counterexamples. No solicitation to speculate in scarce hardware or unsubstantiated allegations about manufacturers. Original contributions use the repository's MIT license; third-party material keeps its applicable rights.

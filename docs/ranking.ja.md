@@ -1,5 +1,7 @@
 # 隠れたHBM容量を疑う予想ランキング
 
+> **過去版の考察です。現行の順位・区分は[v0.7統合ランキング](current-ranking.ja.md)を参照してください。旧順位は当時の判断として残しています。**
+
 > v0.4.0のNVIDIA中心の予想履歴。現在の調査順位は[メーカー横断ランキング](cross-vendor-ranking.ja.md)を参照。Intelの物理余剰確認は正常な追加容量の予想とは区別する。
 
 [日本語README](../README.ja.md) · [English ranking](candidates.md) · [順位の考え方](ranking-method.md) · [理論](research-framework.ja.md) · [予想データ](../data/hypotheses.csv) · [出典](sources.md)

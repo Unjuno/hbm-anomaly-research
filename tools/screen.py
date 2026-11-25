@@ -67,12 +67,12 @@ def main():
         w.writeheader()
         w.writerows({k:fmt(v) for k,v in r.items()} for r in rows)
     else:
-        print('| Device | Role / prediction rank | Width evidence | GB/1024 bit | BW/GB (nominal) | Pin rate (Gb/s) | q | Status |')
+        print('| Device | Historical role (v0.4) | Width evidence | GB/1024 bit | BW/GB (nominal) | Pin rate (Gb/s) | q | Status |')
         print('| --- | --- | --- | ---: | ---: | ---: | ---: | --- |')
         for r in rows:
             values = [r[k] for k in ('name','priority','bus_status','gb_per_1024bit','nominal_bw_per_gb_s_inv','inferred_pin_rate_gbps','q','flag')]
             print('| ' + ' | '.join((fmt(v) or '—').replace('|', r'\|') for v in values) + ' |')
-        print('\nNominal labels only; missing widths remain missing. Flags are descriptive, not predictions.')
+        print('\nNominal labels only; missing widths remain missing. Role labels are historical v0.4 records; see data/current_ranking.csv for the current tiers. Flags are descriptive, not predictions.')
 
 if __name__ == '__main__':
     main()

@@ -1,12 +1,14 @@
 # Cross-vendor HBM research priorities (v0.5.0)
 
+> **Historical analysis. Use the [v0.7 current ranking](current-ranking.md) for the current tiers and categories. Earlier ordinals are retained as the judgment of that release.**
+
 [日本語](cross-vendor-ranking.ja.md) · [Home](../README.md) · [Source register](sources.md) · [CSV](../data/cross_vendor_leads.csv)
 
 2026-11-26. **Desk research only; no original hardware tests.** The prior v0.4.0 prediction list was conditioned on discovery through NVIDIA CMP. That is a selection bias, not a demonstrated property of HBM technology. The new lead order is cross-vendor and ranks the value of a concrete capacity-related suspicion to investigate, rather than measured probabilities of recovery. Physical excess, health, reversible access and supply causation are different claims.
 
 | Priority | Candidate | Nominal capacity | Conditional total / physical finding | Why suspicious | Strongest alternative / limitation |
 | ---: | --- | --- | --- | --- | --- |
-| 1 | Intel GPU Max 1100 | 48 GB | 64 GB if fourth stack is 16 GB; 16 GB inactive | Official datasheet identifies four physical stacks, three enabled 16 GB stacks; inactive position varies. | Permanent disable and possible yield harvesting; no evidence of a healthy or recoverable fourth stack. |
+| 1 | Intel GPU Max 1100 | 48 GB | one physically present disabled stack; 64 GB total only if that stack is 16 GB | Official datasheet identifies four physical stacks, three enabled 16 GB stacks; inactive position varies. | Permanent disable and possible yield harvesting; no evidence of a healthy or recoverable fourth stack. |
 | 2 | NVIDIA CMP 100-200 | ~6 GB class | 12 GB class if larger assembly exists | Low-capacity Volta mining SKU and prior CMP capacity-limit precedent. | Actual width/density unknown; normal low-density or partially active assembly. |
 | 3 | NVIDIA A30 | 24 GB | 32 or 40 GB class if additional 8 GB-class regions populated | Reduced GA100 memory configuration permits shared-package hypothesis. | Ordinary 24 GB population or defective excluded regions; compute recovery is not memory recovery. |
 | 4 | NVIDIA DRIVE A100 / PG199 | 32 GB class reported | 64 GB class if four 16 GB-class stacks populated | OEM-specific GA100 configuration and possible package reuse. | Ordinary four-by-8 GB assembly; count/density unverified. |

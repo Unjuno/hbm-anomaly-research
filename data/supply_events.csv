@@ -11,4 +11,4 @@ event_date,date_type,entity,observed_event,inference_limit,source_id
 2025-04-09,licensing_notice,NVIDIA,H20-specific licensing requirement notice,No GPU physical changes established,S65
 2025-04-27,fiscal_period_end,NVIDIA,H20 inventory and purchase obligation provision plus material reuse,Accounting amounts not part counts or destination SKUs,S65
 2025-07-27,fiscal_period_end,NVIDIA,Provision release on H20 sales outside China,Resale not evidence of changed HBM,S67
-2025-04-01,month_precision,AMD,April 2025 MI308-specific license requirement change,Date only month precision; not BOM change,S68
+2025-04,month_precision,AMD,April 2025 MI308-specific license requirement change,Date only month precision; not BOM change,S68

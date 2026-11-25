@@ -1,5 +1,7 @@
 # How the hypothesis ranking is made
 
+> **Historical analysis. Use the [v0.7 current ranking](current-ranking.md) for the current tiers and categories. Earlier ordinals are retained as the judgment of that release.**
+
 > Historical NVIDIA-only v0.4.0 snapshot. For the expanded current investigation order, see [cross-vendor ranking](cross-vendor-ranking.md). The earlier five predictions are preserved for comparison; Intel's documented physical surplus is a distinct evidence class.
 
 [Home](../README.md) · [Candidate ranking](candidates.md) · [Physical theory](theory.md) · [Manufacturing context](lot-history.md) · [Sources](sources.md)

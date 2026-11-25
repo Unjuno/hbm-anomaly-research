@@ -2,7 +2,7 @@
 
 [Home](../README.md) · [Theory](theory.md) · [Study design](study-design.md) · [Sources](sources.md) · [Validation](validation.md)
 
-This background supports the [prediction ranking](candidates.md). The cohort protocol below is an optional route to future evidence. A sourced manufacturing hypothesis can be published before hardware observations exist; its uncertain timing and compatibility must remain explicit.
+This background supports the [current prediction ranking](current-ranking.md). The cohort protocol below is an optional route to future evidence. A sourced manufacturing hypothesis can be published before hardware observations exist; its uncertain timing and compatibility must remain explicit.
 
 ## Hypothesis and scope
 
@@ -13,6 +13,8 @@ A SKU is a marketed specification, not a guarantee of identical bill of material
 H-lot names a family of hypotheses, not a claim a finite volunteer survey could disprove everywhere. Before collection, specify the part/revision groups, manufacturing-stage date bounds, minimum difference, environment, collection limit and separate verdicts using the [study design](study-design.md). Physical heterogeneity, functional excess, cohort association and a supply cause can each have a different outcome. A negative result must not be evaded by silently redefining the target lot after seeing it.
 
 HBM is attached alongside the GPU on a qualified package/interposer. Substituting an individual HBM stack during package manufacture and reassigning an already completed GPU+HBM package during board manufacture are different operations. Ordinary board assembly cannot simply exchange bonded stacks. Compatibility must cover interposer routing, stack height, electrical timing, power, thermal design, controller address mapping, firmware, test/qualification and contractual requirements. A readily available part is not necessarily a usable substitute. A high-density assembly may be defective, committed to another customer, or worth more in a high-end SKU.
+
+See the [manufacturing-stage deductions](inference-refinement.md) for why a later shortage can motivate completed-package reassignment but cannot retroactively change the original bonded stack population. Rework requires separate evidence.
 
 ## Economic model (illustrative decision criterion)
 

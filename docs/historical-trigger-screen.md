@@ -1,5 +1,7 @@
 # Historical-trigger screening: new HBM leads, 2026-11-26
 
+> **Historical analysis. Use the [v0.7 current ranking](current-ranking.md) for the current tiers and categories. Earlier ordinals are retained as the judgment of that release.**
+
 [日本語](historical-trigger-screen.ja.md) · [Cross-vendor v0.5 ranking](cross-vendor-ranking.md) · [CSV](../data/historical_trigger_leads.csv) · [Sources](sources.md)
 
 **Desk research, not a capacity-recovery result.** These are new or revisited leads ranked by the specificity of their product/history evidence. The lower confidence of healthy, unexposed memory and the untested ability to access it remain separate. No market-price adjustment. Keep earlier cross-vendor ranking separately for auditability.

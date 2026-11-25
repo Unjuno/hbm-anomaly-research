@@ -1,5 +1,11 @@
 # Changelog
 
+## 0.7.0 — 2026-11-26
+
+Unifies the current comparison into tied qualitative physical-hypothesis tiers: 11 new predictions, plus references and watches (25 entries). Separates installed, healthy and accessible capacity; moves Intel Max 1100 to a documented-disabled reference, H20 to supply watch, and Blackwell capacity discrepancies to specification/accounting watch. Retains prior rankings as labeled snapshots and corrects the historical Intel fourth-stack density wording without changing the old ordinal record.
+
+Adds English/Japanese theory refinements: HBM2E address-density versus disabled-stack mechanisms, manufacturing-stage constraints, independent-source counting, publication-induced price feedback, and bounded counterexamples. Updates primary MI50/MIG sources, fixes the source-table break and the artificial day in the month-only AMD supply event. Rewrites the landing pages, adds brief bilingual evidence intake and candidate-specific requests, and prepares Japanese/English X drafts with compose links. Preparing a compose link does not post to X. No new hardware experiment, favorable lot, calibrated probability, verified price series or capacity recovery is claimed.
+
 ## 0.6.0 — 2026-11-26
 
 Adds a historical-trigger shortlist and source-backed product-specific H20/MI308 supply evidence. Highlights the official H100 SXM5 64/94 GB HBM2e configurations, A800 Active, H100 and Blackwell variants; retains ordinary explanations and old rankings. MI308X 192 GB reports prevent assigning an unsupported small-capacity baseline. No original hardware tests, verified new market prices, or recovery claim.

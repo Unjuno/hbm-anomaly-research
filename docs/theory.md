@@ -2,7 +2,9 @@
 
 [Home](../README.md) · [Sources](sources.md) · [Validation protocol](validation.md)
 
-This physical model supports the [hypothesis ranking](candidates.md). Its descriptive ratios do not compute that order; the [ranking method](ranking-method.md) also weighs product-specific mechanisms, ordinary explanations and explicit assumptions.
+This physical model supports the [current hypothesis ranking](current-ranking.md). Its descriptive ratios do not compute that order; the [current ranking](current-ranking.md) also weighs product-specific mechanisms, ordinary explanations and explicit assumptions.
+
+The [v0.7 refinements](inference-refinement.md) add concrete address-density versus disabled-stack mechanisms, manufacturing-stage constraints and publication-feedback rules without changing this model.
 
 ## 1. Separate the claims before collecting evidence
 
