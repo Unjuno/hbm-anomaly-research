@@ -4,11 +4,27 @@
 
 [日本語](README.ja.md) · [Detailed ranking](docs/candidates.md) · [Ranking method](docs/ranking-method.md) · [Physical theory](docs/theory.md) · [Manufacturing history](docs/lot-history.md) · [Sources](docs/sources.md)
 
-**v0.4.0 — 2026-11-25. Desk research; no original hardware measurements.** Our main output is a reasoned prediction: what looks suspicious, why, what ordinary explanation competes with it, and what would change the order. Hardware ownership is not required to contribute a better hypothesis or source.
+**v0.5.0 — 2026-11-26. Desk research; no original hardware measurements.** Our main output is a reasoned prediction: what looks suspicious, why, what ordinary explanation competes with it, and what would change the order. Hardware ownership is not required to contribute a better hypothesis or source.
 
-## Current hypothesis ranking
+> **v0.5.0 (2026-11-26) — expanded cross-vendor lead ranking.** The previous NVIDIA-only ranking suffered from selection bias. Intel Max 1100 has manufacturer-documented physically present disabled HBM; AMD RX 480 provides a historical, non-HBM supply/lot precedent. [Expanded analysis](docs/cross-vendor-ranking.md) · [日本語](docs/cross-vendor-ranking.ja.md) · [CSV](data/cross_vendor_leads.csv). Investigation priority is not the probability of healthy extra memory or software recovery.
 
-The ranked hypothesis is that **some units already contain ordinary-data HBM beyond the nominal capacity, with some additional capacity still healthy but unexposed**. Software accessibility, stable application use, market prevalence and purchase value are separate questions. All candidates remain unconfirmed; first place is relative, not high confidence.
+| Priority | Candidate | Nominal capacity | Conditional total / physical finding | Why suspicious | Strongest alternative / limitation |
+| ---: | --- | --- | --- | --- | --- |
+| 1 | Intel GPU Max 1100 | 48 GB | 64 GB if fourth stack is 16 GB; 16 GB inactive | Official datasheet identifies four physical stacks, three enabled 16 GB stacks; inactive position varies. | Permanent disable and possible yield harvesting; no evidence of a healthy or recoverable fourth stack. |
+| 2 | NVIDIA CMP 100-200 | ~6 GB class | 12 GB class if larger assembly exists | Low-capacity Volta mining SKU and prior CMP capacity-limit precedent. | Actual width/density unknown; normal low-density or partially active assembly. |
+| 3 | NVIDIA A30 | 24 GB | 32 or 40 GB class if additional 8 GB-class regions populated | Reduced GA100 memory configuration permits shared-package hypothesis. | Ordinary 24 GB population or defective excluded regions; compute recovery is not memory recovery. |
+| 4 | NVIDIA DRIVE A100 / PG199 | 32 GB class reported | 64 GB class if four 16 GB-class stacks populated | OEM-specific GA100 configuration and possible package reuse. | Ordinary four-by-8 GB assembly; count/density unverified. |
+| 5 | AMD Instinct MI50 16 GB | 16 GB | 32 GB class if four 8 GB-class stacks populated | Vendor lists 16 and 32 GB MI50 with the same 4096-bit interface and 1 TB/s bandwidth; known 32 GB assembly in same SKU family. | Ordinary 4 GB stacks explain 16 GB; FRU-name mismatch is not a stock access restriction; refurbished boards may differ. |
+| 6 | AMD RX Vega 56 / 64 8 GB | 8 GB | 16 GB class if two 8 GB-class stacks populated | Common PCB with 16 GB Vega Frontier Edition; 2017 documented HBM2 production expansion and reported supply/yield difficulties. | Teardown reports different soldered packages; normal two-by-4 GB assembly; high-density HBM also scarce. |
+| 7 | NVIDIA CMP 100-210 | 16 GB class | 32 GB class only if higher-density assembly exists | Distinct board/firmware families provide a concrete cohort axis. | Investigated 1df4 unit has ordinary 16 GB V100 origin; performance improvement is not capacity gain. |
+| 8 | AMD / XFX BC-160 | 8 GB | 16 GB class only if two 8 GB-class stacks populated | 2021 Navi 12 HBM2 mining product; relevant market context. | 8 GB / 2048-bit ordinary; official V520 comparator also 8 GB; no verified shipping 16 GB Navi 12 counterpart in reviewed sources. |
+| 9 | NVIDIA A30X | 24 GB | 48 GB class if three 16 GB-class stacks and partial exposure | Special converged HBM2e SKU and hypothetical density substitution. | Ordinary 8 GB-class HBM2e explains capacity/bandwidth; width/density not established. |
+
+The Intel case has a documented physical surplus; the fourth stack's 16 GB size is a conditional inference, and Intel describes it as permanently disabled. The other rows remain unverified predictions. See the expanded analysis for sources, ordinary alternatives and watchlist. No price-based adjustment.
+
+## Historical NVIDIA-only hypothesis ranking (v0.4.0)
+
+The ranked hypothesis is that **some units already contain ordinary-data HBM beyond the nominal capacity, with some additional capacity still healthy but unexposed**. Software accessibility, stable application use, market prevalence and purchase value are separate questions. All five historical NVIDIA predictions remain unconfirmed; first place is relative, not high confidence.
 
 Capacity scenarios below are **conditional nominal total-capacity classes**, not measured capacities, expected values or ceilings.
 

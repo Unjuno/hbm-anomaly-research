@@ -1,5 +1,7 @@
 # Ranked hypotheses: which HBM products look suspicious, and why?
 
+> Historical NVIDIA-only v0.4.0 snapshot. For the expanded current investigation order, see [cross-vendor ranking](cross-vendor-ranking.md). The earlier five predictions are preserved for comparison; Intel's documented physical surplus is a distinct evidence class.
+
 [Home](../README.md) · [日本語ランキング](ranking.ja.md) · [Ranking method](ranking-method.md) · [Physical theory](theory.md) · [Sources](sources.md)
 
 **Forecast register — 2026-11-25. Every ranked candidate below is unconfirmed.** We do not own the candidate hardware. The main output is a reasoned, revisable prediction from public specifications, product relationships, historical conditions and attributed owner reports.

@@ -1,5 +1,7 @@
 # How the hypothesis ranking is made
 
+> Historical NVIDIA-only v0.4.0 snapshot. For the expanded current investigation order, see [cross-vendor ranking](cross-vendor-ranking.md). The earlier five predictions are preserved for comparison; Intel's documented physical surplus is a distinct evidence class.
+
 [Home](../README.md) · [Candidate ranking](candidates.md) · [Physical theory](theory.md) · [Manufacturing context](lot-history.md) · [Sources](sources.md)
 
 **v0.4.0 / 2026-11-25. This is an explicit desk-research prediction.** The project uses public specifications, first-person reports, product history and physical reasoning to rank hypotheses. Owning or testing a GPU is not a prerequisite for contributing a reasoned prediction.
