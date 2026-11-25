@@ -1,0 +1,10 @@
+event_date,date_type,entity,observed_event,inference_limit,source_id
+2020-02-04,announcement,Samsung,16 GB HBM2E announcement,HBM2E density exists; allocation unknown,S23
+2020-07-02,announcement,SK hynix,HBM2E mass production announcement,No NVIDIA-specific stock or qualification evidence,S24
+2020-11-16,announcement,NVIDIA,A100 80 GB HBM2e announcement,No inference of A30 BOM compatibility,S25
+2021-01-31,fiscal_period_end,NVIDIA,FY2021 Form 10-K long lead times and inventory mismatch risk,Corporate context only; period end not publication date,S21
+2021-02-19,announcement,NVIDIA,Japanese CMP mining product line announcement,Date of Japanese article; not US announcement or individual SKU manufacture date,S13
+2021-04-12,announcement,NVIDIA,A30 and A10 systems announcement,Not individual manufacture date,S26
+2022-01-30,fiscal_period_end,NVIDIA,FY2022 Form 10-K procurement at least 12 months ahead vs ~6 historically,Company-wide; no specific HBM shortage or surplus documented,S22
+2022-09-15,protocol_event,Ethereum,Mainnet proof-of-stake Merge,Mining demand shock; no evidence of specific inventory reassignment,S27
+2023-01-29,fiscal_period_end,NVIDIA,FY2023 Form 10-K supply-demand mismatch by platform,Company-wide; no specific BOM substitution documented,S29

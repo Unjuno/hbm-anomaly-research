@@ -1,0 +1,9 @@
+# Contributing
+
+For a new comparison, start with the **Bounded study proposal** issue template and [study design](docs/study-design.md). Fix the exact baseline, target group, material difference, evidence criteria and collection stop before interpreting outcomes. Keep the original plan and label amendments. A single device result may be reported while the planned comparison continues.
+
+Thank you for helping test this research. You do not need to buy or modify a GPU. The highest-value contribution is a verifiable stock observation from an existing owner. Read [validation](docs/validation.md) before submitting. Negative results are welcome, including ordinary memory configurations or unsuccessful experiments. Use the GitHub issue forms; for new data submit a PR with source IDs, units, provenance, date, assumptions and uncertainty. Do not add speculative capacity as a measured value. For lot reports record the date type, range and source, memory-part identification and known repair history; see [lot history](docs/lot-history.md). Corporate supply history and sample observations belong in separate ledgers.
+
+Only publish data you are entitled to share. Redact device serials, UUIDs, hostnames, account information, identifiers of other people and location details. Do not submit proprietary firmware, vendor binaries, secrets or exploit instructions. If a potential vulnerability is found, follow [SECURITY.md](SECURITY.md). No requests to bypass security or permanent device modifications are accepted. Code submissions must run offline and must not write to hardware.
+
+Use plain, respectful technical discourse; no harassment, solicitation to speculate in scarce hardware, or unsubstantiated claims of misconduct. Changes to evidence status need an auditable reason. By submitting original contributions you agree to the repository's MIT license; third-party material retains its applicable license.
