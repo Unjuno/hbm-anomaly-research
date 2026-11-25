@@ -1,86 +1,62 @@
 # HBM Anomaly Research
 
-**An open, evidence-first investigation of potentially unaddressed GPU memory.**
+**A public, explicitly speculative ranking of GPUs that may contain additional healthy HBM beyond their advertised capacity.**
 
-[日本語](README.ja.md) · [Theory](docs/theory.md) · [Study design](docs/study-design.md) · [Manufacturing cohorts](docs/lot-history.md) · [Candidate register](docs/candidates.md) · [Validation protocol](docs/validation.md) · [Sources](docs/sources.md) · [Contribute](CONTRIBUTING.md)
+[日本語](README.ja.md) · [Detailed ranking](docs/candidates.md) · [Ranking method](docs/ranking-method.md) · [Physical theory](docs/theory.md) · [Manufacturing history](docs/lot-history.md) · [Sources](docs/sources.md)
 
-**Status: v0.3.0 research framework — 2026-11-25.** This project has not performed its own GPU hardware tests. Its deliverables are sourced comparisons, an explicit physical model, a conditional manufacturing hypothesis, and a protocol for independent observations.
+**v0.4.0 — 2026-11-25. Desk research; no original hardware measurements.** Our main output is a reasoned prediction: what looks suspicious, why, what ordinary explanation competes with it, and what would change the order. Hardware ownership is not required to contribute a better hypothesis or source.
 
-## Research question
+## Current hypothesis ranking
 
-Can unusual combinations of advertised memory capacity, effective memory bus width, memory bandwidth, manufacturing lineage and secondary-market behavior identify accelerator variants worth investigating for additional physically populated, functional HBM?
+The ranked hypothesis is that **some units already contain ordinary-data HBM beyond the nominal capacity, with some additional capacity still healthy but unexposed**. Software accessibility, stable application use, market prevalence and purchase value are separate questions. All candidates remain unconfirmed; first place is relative, not high confidence.
 
-Earlier mining accelerators provide a reason to ask this question. Independent community projects report larger addressable capacities on selected CMP 170HX and CMP 100-100 boards. The relevant question is not whether a related GPU has a larger advertised capacity, but whether *this board revision* has extra populated, healthy, separately addressable memory.
+Capacity scenarios below are **conditional nominal total-capacity classes**, not measured capacities, expected values or ceilings.
 
-## Four claims, four evidence requirements
+| Rank | Candidate | Our prediction | Conditional total capacity | Strongest ordinary explanation |
+| ---: | --- | --- | --- | --- |
+| **1** | **CMP 100-200** | Some roughly 6 GB-class Volta mining units may expose only part of a larger HBM configuration | **12 GB class**, if the actual assembly contains that capacity | Unknown width/density; lower-density parts, partial channels or defect harvesting can explain the stock capacity |
+| **2** | **A30** | Some GA100-derived packages may retain additional healthy memory regions outside the advertised 24 GB | **32 GB**, then **40 GB class**, if one or two additional 8 GB-class regions exist | Official 24 GB / 3072-bit geometry is ordinary; extra parts may be absent or defective |
+| **3** | **PG199 / DRIVE A100** | Some OEM cohorts may use higher-density HBM while retaining a 32 GB-class configuration | **64 GB class** if four 16 GB-class stacks are actually populated | An ordinary four-by-8 GB configuration fits; both actual stack count and high density are unverified |
+| **4** | **CMP 100-210** | Different board families leave a weak possibility of higher-density cohorts | **32 GB class** only if a higher-density assembly is established | The studied 1df4 unit has an ordinary V100 16 GB origin; compute/link/clock gains are not capacity gains |
+| **5** | **A30X** | A particular HBM2e part/cohort might contain higher-density memory restricted to 24 GB | **48 GB class** if three 16 GB-class stacks and partial exposure are present | Ordinary 8 GB-class HBM2e and faster signaling explain the bandwidth; width is not sourced |
 
-| Claim | Evidence needed | What it does not establish |
-| --- | --- | --- |
-| Extra physical data capacity | Reliable memory-part identification tied to the actual assembly | Health, accessibility, or recoverability |
-| Extra functional capacity | Verified distinct, simultaneously resident device data above an exact nominal baseline | All-unit reliability, prevalence, or manufacturing intent |
-| Production-cohort association | Comparable dated variants, independent provenance, and negative observations | A supply shortage as the cause |
-| Supply-driven substitution | Attributable part/cohort-specific evidence of a change and its reason | The same decision on every related product |
+**A30 and PG199 belong to the same weak tier; ranks 2 and 3 can readily reverse.** The detailed cards separate vendor facts, owner observations, our inference, required assumptions, lot scenarios, counterarguments and rank-change conditions. Main sources: CMP 100-200 [S02,S05,S32,S33]; A30 [S06,S34,S35]; PG199 [S12]; CMP 100-210 [S04,S14,S33]; A30X [S01,S10]. See the [source register](docs/sources.md).
 
-These are separate claims, not a universal ladder: functional testing can establish a storage lower bound before every package is identified, and a documented substitution need not yield healthy extra memory. Price behavior helps prioritize collection; it cannot establish any memory-capacity claim alone.
+CMP 170HX and CMP 100-100 are **external reported controls**, not new predictions in this ranking [S03,S04a,S16]. Ordinary A100, P100/V100 and AMD MI50/MI60 configurations are comparison/watchlist cases. Read the [full candidate cards and watchlist](docs/candidates.md) or the [Japanese ranking](docs/ranking.ja.md).
 
-### Reading order
+## Why this order?
 
-1. [Physical theory](docs/theory.md): assumptions, units, derivation, and why bandwidth cannot uniquely identify capacity.
-2. [Manufacturing cohorts](docs/lot-history.md): conditions under which a qualified substitute may be economical, and what historical sources actually show.
-3. [Study design](docs/study-design.md): bounded hypotheses, exact baselines, stopping rules, and separate verdicts.
-4. [Candidate register](docs/candidates.md) and [owner protocol](docs/validation.md): choose the next missing observation and submit evidence.
+We compare capacity-specific clues, a concrete pathway to partial exposure or package reuse, the strength of ordinary configurations, and the number of unverified assumptions. We publish pairwise reasoning instead of an arbitrary points total or an invented success probability. The current ordering is an analyst judgment that can be challenged with a different weighting of the same evidence.
 
-The [Japanese research framework](docs/research-framework.ja.md) connects all four documents. The [call for participants](docs/call-for-participants.md) is ready for existing hardware owners.
+CMP 100-200 combines a capacity-specific low-capacity report with related 12 GB Volta configurations and the prior-generation CMP capacity-control analogy. A30 and PG199 rely more heavily on unverified package or density hypotheses. CMP 100-210's reported gains concern performance, while A30X's bandwidth is readily explained without extra capacity. The [ranking method](docs/ranking-method.md) explains these comparisons, including why the A30/A100 distinction is judgment-dependent.
 
-## Why manufacturing date matters
+## Physical and manufacturing background
 
-The original SKU specification may remain unchanged while qualified components or completed packages vary across production cohorts. NVIDIA's FY2021/FY2022 filings document long lead times, supply commitments and inventory-mismatch risk [S21,S22]. Higher-capacity assembly substitution under shortages is therefore a testable **hypothesis**, not an observed NVIDIA BOM decision. It requires technical qualification and a favorable opportunity-cost comparison. We record historical context separately from individual production dates and physical observations. Compare early, transition and late cohorts rather than treating one failed board as a verdict on the whole SKU. See the [lot history and economic model](docs/lot-history.md), [dated event ledger](data/supply_events.csv), and [empty per-device observation register](data/lot_observations.csv).
+Capacity and bandwidth are not interchangeable. Different HBM densities can share the same external width and signaling rate [S01]. A small capacity-per-width proxy can motivate a hypothesis, but ordinary low-density parts or partial channels may explain it. A normal proxy does not disprove extra physical memory. The [physical model](docs/theory.md) includes variables, units, derivations and a constructive non-identifiability proof.
 
-## Where to start
+Supply constraints can make an available, qualified higher-capacity package economical to reuse, even while keeping the original SKU specification. Compatibility, qualification cost and the value of using that package elsewhere matter. Corporate shortages alone do not identify a particular BOM substitution or distinguish two candidates [S21,S22]. The [lot-history model](docs/lot-history.md) separates dates, mechanisms and evidence. The [Japanese framework](docs/research-framework.ja.md) connects the theory to the predictions.
 
-| Device | Known or advertised capacity | Research objective | Evidence status |
-| --- | ---: | --- | --- |
-| CMP 170HX (8 / 10 GB variants) | 8 / 10 GB class | Positive control; community reports 64 / 40 GB class respectively, with variant exceptions | External reports; not tested here |
-| CMP 100-100 (GP100) | 6 GiB | Positive control; 12 GiB reported; verify coverage and board differences | External logs, partial coverage |
-| **CMP 100-200 (Volta)** | ~6 GB class | Obtain reliable bus width, board IDs, HBM identification and stock logs; 12 GB is a conditional hypothesis | High information priority; capacity recovery unverified |
-| **A30 (GA100)** | 24 GB | Identify physical stack/partition topology and distinguish defects from intentional settings | High large-capacity research priority; no recovery established here |
-| DRIVE A100 / PG199 | 32 GB class (reported) | Confirm exact variants and topology; document unsuccessful tests as well | Conditional; no recovery established here |
-| CMP 100-210 (GV100) | 16 GB class | Compare 1df4 and 1d84 board families; investigate whether different physical densities exist | Performance restoration is not capacity restoration |
-| A30X | 24 GB | Compare against A100X; examine whether normal 8 GB stacks fully explain it | Lower priority; negative owner report exists |
+**Price-based rank adjustment: none in this release.** Comparable transaction time series are missing. A single ask, sold counter or listing disappearance cannot establish a price trend or private capacity discovery. See [market evidence](docs/market.md).
 
-See [candidate register](docs/candidates.md) for conditional configurations, counterexamples, and source IDs. These are research priorities, not estimates of success probability. Do not buy hardware solely on this list.
+## Read or reuse the analysis
 
-## Why capacity and bandwidth matter
+- [Detailed English hypothesis ranking](docs/candidates.md) / [日本語の予想ランキング](docs/ranking.ja.md)
+- [Ranking method and sensitivity](docs/ranking-method.md)
+- [Hypotheses as CSV](data/hypotheses.csv): predictions, assumptions, alternatives and revision conditions
+- [Sourced configuration data](data/devices.csv) and [data dictionary](data/README.md)
+- [Source register](docs/sources.md) and [release history](CHANGELOG.md)
 
-We compare nominal capacity per effective 1,024-data-lane equivalent against explicitly sourced reference densities. A low value is a lead, not a proof. Different stack densities can have the same external width and data rate [S01]. Disabling channels, empty or dummy sites, bad memory, and lower-density parts also explain reduced capacity. Dedicated ECC cells, BAR apertures and host-backed virtual memory must be excluded from extra data-capacity claims. See the [variable definitions, derivation and counterexamples](docs/theory.md).
-
-## Call for independent owners
-
-If you already own a CMP 100-200, A30, PG199, CMP 100-210 or another unusual HBM accelerator, please contribute **even a stock, read-only report**. No hardware purchase or modification is required. We particularly need PCI and subsystem IDs, board part/revision, firmware version, baseline memory and clocks, sources identifying memory packages, and documented manufacturing-date ranges or date codes (not VBIOS dates). Failed tests, ordinary low-density assemblies and null results are equally valuable.
-
-- Use the **Hardware observation** issue template for read-only data.
-- Use the **Bounded study proposal** template to specify the target, baseline, thresholds and stopping rules before collecting outcomes.
-- Use the **Replication result** template for an already performed, independently designed test.
-- Use the **New candidate / source correction** template for a source or a contradictory observation.
-- Use the **Historical supply / lot evidence** template for sourced production change or allocation history.
-- Use the **Market observation** template for dated listings or actual transactions; distinguish the two.
-
-A new capacity displayed by a driver does not establish usable memory. Independent address-sensitive write/read tests, coverage accounting, error telemetry and repeatability are essential. See [validation](docs/validation.md). Do not expose serial numbers, UUIDs, hostnames, credentials, personal data, copyrighted firmware dumps or security exploit details in public issues.
-
-## Reproduce the desk analysis
-
-Requires Python 3.10+; standard library only. No GPU, driver, administrator privilege, network or device writes needed.
+The offline script checks nominal geometry only. It does **not** calculate the hypothesis ranking or a success probability. Python 3.10+, standard library, no GPU or network required:
 
 ```sh
 python3 tools/screen.py --input data/devices.csv
-python3 tools/screen.py --input data/devices.csv --format csv
 python3 -m unittest discover -s tests -v
 ```
 
-Unknown and hypothetical bus widths are not silently converted into verified values. External community widths are calculated and explicitly labeled separately from vendor specifications. The screening utility calculates descriptive ratios only; it does not discover hardware capacity or estimate unlock probability. See [data dictionary](data/README.md).
+## Contribute a source or a better prediction
 
-## Project boundaries
+Use the **New candidate / prediction / source correction** issue template to challenge a reason, propose a candidate or supply a missing document. State what is observed and what you infer. A good contribution can be a normal low-density explanation, a part-number mapping, a historical catalog or a better reason to change two ranks. See [contributing](CONTRIBUTING.md).
 
-This is independent research, not affiliated with NVIDIA or any other manufacturer. All measurements so far are external and attributed. No bypass code, firmware modification scripts, privileged register writes, fuse programming, overvolting or destructive experiment instructions are distributed here. Report potential security vulnerabilities privately to the relevant vendor. Respect ownership, warranties, applicable law and third-party licenses.
+Existing hardware owners can optionally contribute observations using the [validation protocol](docs/validation.md), [study design](docs/study-design.md) and other issue templates. These are supporting resources for testing predictions; completing a hardware study is not a prerequisite for publishing a reasoned hypothesis. See the [participation page](docs/call-for-participants.md).
 
-The goal is a reproducible negative result or positive result per identifiable variant — not a speculative list marketed as hidden VRAM. Contributions and corrections are welcome. Original repository content is MIT-licensed; external material retains its own rights.
+Original code and documentation are [MIT-licensed](LICENSE); external material retains its own rights. This is independent research. Public evidence should omit personal identifiers, proprietary firmware and operational security-bypass details.

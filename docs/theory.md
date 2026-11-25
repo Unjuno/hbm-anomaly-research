@@ -2,6 +2,8 @@
 
 [Home](../README.md) · [Sources](sources.md) · [Validation protocol](validation.md)
 
+This physical model supports the [hypothesis ranking](candidates.md). Its descriptive ratios do not compute that order; the [ranking method](ranking-method.md) also weighs product-specific mechanisms, ordinary explanations and explicit assumptions.
+
 ## 1. Separate the claims before collecting evidence
 
 This project investigates whether a specified board variant contains ordinary HBM data capacity beyond its advertised baseline, and whether any of that capacity works. Four claims require different evidence:

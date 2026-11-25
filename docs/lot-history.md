@@ -2,6 +2,8 @@
 
 [Home](../README.md) · [Theory](theory.md) · [Study design](study-design.md) · [Sources](sources.md) · [Validation](validation.md)
 
+This background supports the [prediction ranking](candidates.md). The cohort protocol below is an optional route to future evidence. A sourced manufacturing hypothesis can be published before hardware observations exist; its uncertain timing and compatibility must remain explicit.
+
 ## Hypothesis and scope
 
 A SKU is a marketed specification, not a guarantee of identical bill of materials (BOM) across its lifetime. The research unit is an identified hardware variant and production cohort, not just the product name. A negative result on one board cannot rule out a distinct cohort. Conversely, a positive result on one board does not establish the prevalence of that configuration.

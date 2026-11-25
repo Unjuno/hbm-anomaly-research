@@ -67,7 +67,7 @@ def main():
         w.writeheader()
         w.writerows({k:fmt(v) for k,v in r.items()} for r in rows)
     else:
-        print('| Device | Priority | Width evidence | GB/1024 bit | BW/GB (nominal) | Pin rate (Gb/s) | q | Status |')
+        print('| Device | Role / prediction rank | Width evidence | GB/1024 bit | BW/GB (nominal) | Pin rate (Gb/s) | q | Status |')
         print('| --- | --- | --- | ---: | ---: | ---: | ---: | --- |')
         for r in rows:
             values = [r[k] for k in ('name','priority','bus_status','gb_per_1024bit','nominal_bw_per_gb_s_inv','inferred_pin_rate_gbps','q','flag')]

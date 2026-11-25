@@ -2,6 +2,8 @@
 
 [Home](../README.md) · [Study design and decisions](study-design.md) · [Contribute](../CONTRIBUTING.md)
 
+**Supporting reference for owners.** The project's main output is the [hypothesis ranking](candidates.md). A theoretical prediction can be published without completing this protocol; use these requirements when interpreting an actual hardware result.
+
 ## Scope and safe baseline
 
 Use hardware you own or are authorized to inspect. Existing stock-card observations are the priority. No purchase, disassembly, device modification, privileged register access or firmware image is required. Do not test production hosts. Use ordinary cooling, vendor-rated power and manufacturer-approved configuration. A test must never target another user's workloads.

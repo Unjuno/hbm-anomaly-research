@@ -2,11 +2,11 @@ id,name,die_family,memory_type,nominal_capacity_gb,runtime_total_mib,effective_b
 cmp170-8,CMP 170HX 8GB,GA100,HBM family,8,8192,4096,community_report,1493,8,A30 documented 24 GB / 3072-bit comparator; not a proven compatible minimum,control,S03;S16;S19;S20,External 64 GB-class recovery reports; 32 GB exception for subsystem 1586. Stock width and theoretical peak externally reported; not measured here.
 cmp170-10,CMP 170HX 10GB,GA100,HBM family,10,10240,5120,community_report,1555,8,A30 documented 24 GB / 3072-bit comparator; not a proven compatible minimum,control,S03;S19;S20,External 40 GB-class recovery reports. Stock width and theoretical peak externally reported; not measured here.
 cmp100-100,CMP 100-100,GP100,HBM2,6,6144,,unknown,,,,control,S02;S04a,External 12288 MiB enumeration; 11264 MiB per reported checker run; physical density unknown.
-cmp100-200,CMP 100-200,Volta,unverified,6,,,unknown,,,,P1,S02;S05;S15,Owner log 6016 MB as displayed; 3072-bit is a hypothesis pending reliable source.
-cmp100-210,CMP 100-210,GV100,HBM2,16,,,unknown,,,,P2,S02;S04;S14,Performance restoration only; distinct 1df4 and 1d84 board families.
-a30,NVIDIA A30,GA100,HBM2,24,,3072,vendor,933,8,A100 40 GB class comparison; 8 GB-equivalent reference,P1,S06;S11,Normal nominal density; investigate disabled partitions only.
-a30x,NVIDIA A30X,Ampere,HBM2e,24,,,unknown,1223,,,P2,S10;S11,Vendor does not state width in cited table; negative community report.
-pg199,DRIVE A100 PG199,GA100 reported,HBM2e reported,32,,,unknown,,,,P1,S11;S12,Community capacity and identity; no vendor width established.
+cmp100-200,CMP 100-200,Volta,unverified,6,,,unknown,,,,prediction_rank_1,S02;S05;S15,Owner log 6016 MB as displayed; 3072-bit is a hypothesis pending reliable source.
+cmp100-210,CMP 100-210,GV100,HBM2,16,,,unknown,,,,prediction_rank_4,S02;S04;S14,Performance restoration only; distinct 1df4 and 1d84 board families.
+a30,NVIDIA A30,GA100,HBM2,24,,3072,vendor,933,8,A100 40 GB class comparison; 8 GB-equivalent reference,prediction_rank_2,S06;S11,Normal nominal density; investigate disabled partitions only.
+a30x,NVIDIA A30X,Ampere,HBM2e,24,,,unknown,1223,,,prediction_rank_5,S10;S11,Vendor does not state width in cited table; negative community report.
+pg199,DRIVE A100 PG199,GA100 reported,HBM2e reported,32,,,unknown,,,,prediction_rank_3,S11;S12,Community capacity and identity; no vendor width established.
 p100-12,Tesla P100 PCIe 12GB,GP100,HBM2,12,,3072,vendor,549,4,P100 16GB: 16/4,reference,S07,Proportional nominal width and capacity.
 p100-16,Tesla P100 PCIe 16GB,GP100,HBM2,16,,4096,vendor,732,4,P100 16GB: 16/4,reference,S07,Reference.
 v100-16,Tesla V100 PCIe 16GB,GV100,HBM2,16,,4096,vendor,900,4,V100 16GB: 16/4,reference,S08,Same bandwidth as 32GB product.

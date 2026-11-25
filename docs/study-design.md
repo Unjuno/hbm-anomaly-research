@@ -4,6 +4,8 @@
 
 **Status: proposed protocol, not a completed experiment.** This document turns the research idea into bounded questions that owners and reviewers can answer. The observation register contains no measurements made by this project.
 
+The main project deliverable is the [explicitly speculative ranking](candidates.md). This study protocol supports future empirical work; it is not a prerequisite for publishing a reasoned prediction from public information.
+
 ## 1. Four claims, four evidence requirements
 
 | Claim | What is being tested | Evidence that can support it | What it does not establish |
