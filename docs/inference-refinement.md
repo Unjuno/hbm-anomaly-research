@@ -1,5 +1,6 @@
 # Refining the predictions without hardware — v0.7.0
 
+**Continuation:** [v0.8 capacity constraints](capacity-constraints.md) prove conditional bounds and distinguish inactive channels from restricted address depth; [manufacturing causality](manufacturing-causality.md) connects supply context to the decision it could actually change. This v0.7 discussion remains background.
 [日本語](inference-refinement.ja.md) · [Current ranking](current-ranking.md) · [Physical theory](theory.md) · [Sources](sources.md)
 
 **2026-11-26. Desk research; no new hardware measurements.** The task is to narrow explicit hypotheses about surplus HBM. This document separates sourced facts, deductions and hypothetical constructions. It does not assign success probabilities. The existing [theory](theory.md) supplies the equations, variable definitions and unit checks.

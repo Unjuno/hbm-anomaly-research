@@ -2,9 +2,11 @@
 
 **Which accelerators might contain more HBM than their advertised capacity? A public, explicitly speculative comparison of hardware, product history and production cohorts.**
 
-[日本語](README.ja.md) · [Current ranking](docs/current-ranking.md) · [Theory](docs/inference-refinement.md) · [Sources](docs/sources.md)
+[日本語](README.ja.md) · [Current ranking](docs/current-ranking.md) · [Capacity constraints](docs/capacity-constraints.md) · [Manufacturing causes](docs/manufacturing-causality.md) · [Sources](docs/sources.md)
 
-**v0.7.0 — 2026-11-26. Desk research; no original hardware measurements.** We explain what looks suspicious, the physical construction required, the ordinary alternative, and the information that would change the prediction. Physical population, healthy capacity and usable capacity are evaluated separately.
+**v0.8.0 — 2026-11-26. Desk research; no original hardware measurements.** We explain what looks suspicious, the physical construction required, the ordinary alternative, and the information that would change the prediction. Physical population, healthy capacity and usable capacity are evaluated separately.
+
+This edition identifies **which explanations fail and which conditions the remaining explanations require**. We derive a conditional stack-count lower bound from active width and separate inactive-channel capacity from unexposed capacity inside active channels under stated density assumptions. The rank tiers stay unchanged; the next documentary questions become more specific.
 
 ## Current shortlist
 
@@ -36,22 +38,30 @@ No purchase, disassembly or firmware change is needed to contribute. **A stock d
 
 ## What the theory adds
 
-Two different mechanisms deserve different questions: a higher-density stack could expose only part of its address space; or a physically populated stack/channel could be disabled. Micron's HBM2E addressing description and Intel's physical-stack documentation ground those mechanisms, without proving either is reversible on a candidate [S01,S39].
+| Case | Sourced specification | Conditional deduction |
+| --- | --- | --- |
+| **A30** | 24 GB, 3072 data lanes [S06] | A uniform 8 GB-class model exposes the full capacity behind its active width. Extra capacity in that model would be behind inactive regions. A separate 16 GB-class model instead needs restricted capacity within active regions. |
+| **AMD MI50 16 GB** | 16 GB, 4096 lanes; the normal 32 GB version has the same width [S38,S80] | A 4 GB-class density gives an ordinary explanation. An 8 GB-class assumption requires half exposure or another explanation within the active regions. Whole-stack disable alone cannot preserve this width while yielding 16 GB. |
+| **H100 NVL** | 94 GB HBM3, 6016 lanes [S72] | With at most 1024 ordinary-data lanes per stack, at least six real stacks must supply the width. If each full native interface is exactly 1024 lanes, whole-stack-only on/off cannot produce this width. This does not establish 96 GB physically present [S82]. |
 
-A shortage can motivate substitution only at a relevant manufacturing stage and with qualified, economically usable material. A later sale date does not date the HBM assembly. H20's disclosed material reuse does not identify HBM or a destination SKU [S65].
+The densities above are **assumptions in construction models**, not identified parts on candidate units. Capacity conventions, reservations, per-channel payload and the meaning of active width must be matched. The [variables, derivations, countermodels and candidate constraints](docs/capacity-constraints.md) explain where each conclusion ceases to apply.
 
-**No price-based ranking adjustment.** Comparable transaction series are missing. Our own publication could affect attention and prices, so a later price response is not independent technical corroboration. Reposts and circular citations do not create additional original observations.
+**The location of a supply constraint changes the prediction.** Substituting loose denser HBM does not automatically remove a bottleneck in the same packaging process. An already assembled compatible package might bypass that process. TSMC's 2023 statement distinguishes front-end supply from constrained CoWoS capacity; it does not document a particular GPU's reuse [S83]. Cohort explanations must distinguish when physical population, capacity configuration and commercial allocation became irreversible.
+
+**No price-based ranking adjustment.** Comparable transaction series are missing. Publication itself could affect attention and prices, so later price responses, reposts and circular citations are not independent technical corroboration.
 
 ## Research materials
 
 | Read | Purpose |
 | --- | --- |
 | [Current ranking](docs/current-ranking.md) / [CSV](data/current_ranking.csv) | One current comparison: 11 predictions plus references and watches; 25 entries |
-| [New deductions](docs/inference-refinement.md) | Address-space versus disabled-stack mechanisms, process-stage logic and inference limits |
+| [Capacity constraints](docs/capacity-constraints.md) | Variable tables, conditional proofs, rejected construction models and candidate-specific implications |
+| [Manufacturing causes](docs/manufacturing-causality.md) | Bottleneck location, irreversible decisions, defect grading versus commercial restrictions |
+| [v0.7 deductions](docs/inference-refinement.md) | Background on address-space versus disabled-stack mechanisms and evidence |
 | [Physical model](docs/theory.md) | Variables, units, derivations and why specifications do not identify the physical population |
 | [Manufacturing history](docs/lot-history.md) / [Market evidence](docs/market.md) | Conditional substitution economics, dated context and price confounders |
 | [Data dictionary](data/README.md) / [Sources](docs/sources.md) | Provenance and the distinction between observations and predictions |
-| [Participation](docs/call-for-participants.md) / [X introduction drafts](docs/outreach.md) | Specific evidence requests and a shareable project introduction |
+| [Participation](docs/call-for-participants.md) | Contributing sources, counterexamples and existing observations |
 | [Optional owner protocol](docs/validation.md) / [Study design](docs/study-design.md) | Interpreting actual hardware evidence; not a prerequisite for theoretical contributions |
 
 The offline screen checks nominal geometry only; it does not compute the ranking or a success probability. Python 3.10+, standard library, no GPU or network:

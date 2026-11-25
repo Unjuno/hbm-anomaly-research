@@ -1,5 +1,13 @@
 # Changelog
 
+## 0.8.0 — 2026-11-26
+
+Adds bilingual conditional capacity constraints with complete variable tables, unit checks and proofs. Separates inactive-partition capacity, unexposed active-partition capacity and reporting-only deductions; derives a stack-count lower bound from a verified active width and per-stack maximum. Shows how known density would exclude particular mechanisms, with A30, MI50, A800, Vega, CMP and H100 countermodels. H100 NVL becomes a geometry reference: its 6016-lane specification rejects whole-stack-only activation under the stated 1024-lane model without proving a 96 GB physical total. A30's native-ECC statement rejects a specific 32-to-24 GB accounting explanation, not runtime reservations generally.
+
+Adds bilingual manufacturing-causality analysis: bottleneck location, irreversible population/configuration/allocation decisions, qualification scope, defect grading versus commercial restrictions, and shared-source dependence. Adds primary Synopsys HBM3 geometry and TSMC July 2023 stage-specific supply context. Documents conditional partial identification instead of invented probabilities or scenario-count scores.
+
+Preserves the 11 prediction tiers and all 25 register entries while adding the `mechanism_constraint` field and sharper next documentary questions. Updates the main theory and navigation; keeps v0.7 reasoning as background. Outreach is deferred and previous drafts are retained as drafts. No new hardware result, favorable cohort, verified price trend, or recovery success is claimed.
+
 ## 0.7.0 — 2026-11-26
 
 Unifies the current comparison into tied qualitative physical-hypothesis tiers: 11 new predictions, plus references and watches (25 entries). Separates installed, healthy and accessible capacity; moves Intel Max 1100 to a documented-disabled reference, H20 to supply watch, and Blackwell capacity discrepancies to specification/accounting watch. Retains prior rankings as labeled snapshots and corrects the historical Intel fourth-stack density wording without changing the old ordinal record.

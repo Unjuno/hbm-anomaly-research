@@ -1,10 +1,12 @@
 # Theory: what specifications can and cannot identify
 
-[Home](../README.md) · [Sources](sources.md) · [Validation protocol](validation.md)
+[Home](../README.md) · [Sources](sources.md) · [Capacity constraints](capacity-constraints.md) · [Manufacturing causality](manufacturing-causality.md) · [Validation protocol](validation.md)
 
 This physical model supports the [current hypothesis ranking](current-ranking.md). Its descriptive ratios do not compute that order; the [current ranking](current-ranking.md) also weighs product-specific mechanisms, ordinary explanations and explicit assumptions.
 
 The [v0.7 refinements](inference-refinement.md) add concrete address-density versus disabled-stack mechanisms, manufacturing-stage constraints and publication-feedback rules without changing this model.
+
+The [capacity-constraint model](capacity-constraints.md) derives conditional bounds and separates inactive interfaces from unexposed address depth. The [manufacturing-causality model](manufacturing-causality.md) identifies the additional historical evidence needed to explain why a construction was produced.
 
 ## 1. Separate the claims before collecting evidence
 
@@ -12,7 +14,7 @@ This project investigates whether a specified board variant contains ordinary HB
 
 | Claim | Evidence that could support it | What that evidence does not establish |
 | --- | --- | --- |
-| **Physical population:** higher-density memory is installed | Legible part identification, applicable manufacturer documentation and independently established population | Healthy cells, accessible addresses or a recovery method |
+| **Physical population:** installed ordinary data capacity exceeds the baseline | Legible part identification, applicable manufacturer documentation and independently established population | Healthy cells, accessible addresses or a recovery method |
 | **Functional extra capacity:** additional distinct on-device storage works | Address-sensitive tests beyond a correctly defined baseline, residency checks and documented conditions | Universal reliability or the same result on every board |
 | **Cohort dependence:** documented revisions or production cohorts differ | Comparable identified units, including negative results, with reliable manufacturing-stage dates | A particular shortage caused the difference |
 | **Manufacturing cause:** supply conditions motivated substitution | Relevant sourcing/change records or other evidence discriminating competing pathways | Merely occurring in a shortage period is insufficient |
@@ -25,13 +27,13 @@ The equations concern one GPU, a specified configuration and a common data-capac
 
 | Symbol | Meaning | Unit | Definition | Domain / assumptions | Type |
 | --- | --- | --- | --- | --- | --- |
-| $w$ | Active **user-data** lane count | 1 | Count marketed as a “$w$-bit bus” | Positive integer; sourced for the same GPU/configuration | Scalar |
-| $w_s$ | Reference full-stack data-lane count | 1 | 1024 for the HBM2/2E reference [S01] | Positive integer; not universal for all interfaces | Scalar |
+| $w$ | Active **user-data** lane count | 1 | Count represented by a sourced “$w$-bit bus” specification | Positive integer; actual active interface of the same physical GPU/configuration, not an aggregate across GPUs or the die's maximum controller capability | Scalar |
+| $w_s$ | Reference full-stack data-lane count | 1 | 1024 for the covered HBM2/2E and HBM3 references [S01,S82] | Positive integer; not universal across generations; a stack-count bound additionally requires this to be a verified maximum per real stack | Scalar |
 | $r$ | Effective transfer rate of each active lane | bit/s | Bits transferred per second per lane; DDR already included | Positive real; equal rate across active lanes assumed | Scalar |
 | $\kappa$ | Bit-to-byte conversion factor | bit/byte | Exactly 8 bit/byte | Exact constant | Scalar |
 | $B$ | Theoretical peak user-data bandwidth | byte/s | Aggregate rate of active data lanes | Positive real; not application throughput | Scalar |
 | $C_0$ | Advertised baseline in exact ordinary data bytes | byte | SKU capacity after resolving its label convention | Positive integer; not stock free memory or a BAR size | Scalar |
-| $n$ | Physically populated HBM stack count | 1 | Actual memory stacks | Nonnegative integer; not inferred from width alone | Scalar |
+| $n$ | Physically populated HBM stack count | 1 | Actual memory stacks, excluding dummy spacers or empty sites | Nonnegative integer; width alone does not establish the exact count, but can bound it below under a verified per-stack lane maximum | Scalar |
 | $i$ | Stack index | 1 | One populated stack | Integer from 1 through $n$ | Scalar |
 | $d_i$ | Ordinary data capacity of stack $i$ | byte | Identified stack's data capacity | Positive integer; excludes parity and repair spares; may include defective ordinary locations | Scalar |
 | $C_p$ | Aggregate populated ordinary data capacity | byte | Sum of the $d_i$ | Nonnegative integer; usually unknown without physical evidence | Scalar |
@@ -47,7 +49,9 @@ The equations concern one GPU, a specified configuration and a common data-capac
 | $d_{ref}$ | Chosen comparison density | byte | Reference from a stated comparison set | Positive real; **not** automatically the minimum compatible density | Scalar |
 | $q$ | Capacity-per-width ratio relative to the comparator | 1 | $c_e/d_{ref}$ | Positive real; descriptive screening proxy | Scalar |
 
-**Normalize the width.** A raw I/O count may include ECC/parity lanes, whereas a bandwidth figure may count only data. Micron distinguishes 1024 user-data lanes from 1152 data-plus-ECC lanes in its technical brief [S01]. Do not insert unlike definitions into the same equation. A clock in MHz is also not automatically the effective bit-transfer rate; do not apply a DDR multiplier twice.
+**Normalize the width and generation.** A raw I/O count may include ECC/parity lanes, whereas a bandwidth figure may count only data. Micron distinguishes 1024 user-data lanes from 1152 data-plus-ECC lanes in its technical brief [S01]. Do not insert unlike definitions into the same equation. The covered HBM2E interface has eight 128-lane channels, each divided into two 64-lane pseudochannels. HBM3 keeps 1024 data lanes but divides them into sixteen 64-lane channels and thirty-two 32-lane pseudochannels [S01,S82]. These are interface units, not evidence of a particular GPU's independently disableable units.
+
+**Normalize the rate.** A clock in MHz is not automatically the effective bit-transfer rate; do not apply a DDR multiplier twice. HBM3 changes the relationship between command/address clocks and data strobes [S82]. A field labelled “memory clock” therefore needs its product-specific meaning before conversion; there is no universal multiplier to apply to every reported clock.
 
 **The CSV uses approximate nominal proxies.** The nominal_capacity_gb field retains capacity classes; peak_bandwidth_gbps means decimal **GB/s**, despite the lowercase name. A nominal “8 GB” result must not silently become a measurement of either eight billion bytes or eight GiB. Exact runtime MiB and independently tested bytes have separate fields. See the [data dictionary](../data/README.md).
 
@@ -75,7 +79,9 @@ Physical population instead obeys
 
 $$C_p=\sum_{i=1}^{n}d_i.$$
 
-Active width establishes neither physical stack count nor density. Partially active channels, different densities, unpopulated sites, dummy spacers and defective components can change that relationship. Package outline or apparent stack height alone also does not establish density: match verified part identity to applicable documentation.
+Active width does not establish the **exact** physical stack count or stack densities. It does supply a conditional lower bound: if the reported width is the actual active data interface, and no real stack can provide more than the verified per-stack maximum, at least the active width divided by that maximum, rounded up, must be backed by connected real stacks. For example, 6016 active data lanes require at least six such stacks when each supports at most 1024 lanes. The H100 NVL brief supplies the 6016-lane observation [S72]; the bound does not establish 96 GB of installed capacity or healthy spare memory. See the [complete proof and geometry assumptions](capacity-constraints.md).
+
+Partially active channels, different densities, unpopulated sites, dummy spacers and defective components prevent turning that bound into an exact population or capacity claim. Width alone also puts no upper bound on additional unconnected stacks. Package outline or apparent stack height alone does not establish density: match verified part identity to applicable documentation.
 
 For a stated comparison density, the screen computes
 
@@ -112,7 +118,22 @@ Construct two hypothetical boards using those interface characteristics:
 
 This establishes **non-identifiability from that observation set**. It does not show that Board B was manufactured, that its restriction is reversible or that its extra cells are healthy. Verified part density, actual population, sound distinct-address tests or manufacturing records can distinguish the models.
 
-There is no necessary conservation law forcing capacity to fall whenever bandwidth rises. Adding complete identical active stacks raises both; changing stack density can change capacity without changing external width or peak rate. Qualification still depends on controller addressing, package, timing, power and thermal constraints. The equations establish possibilities within their assumptions, not universal part interchangeability.
+### Capacity, interface width and signaling are separate choices
+
+There is no necessary conservation law forcing capacity to fall whenever bandwidth rises. The following are model comparisons; their stated fixed conditions are necessary, not observations about every product.
+
+| Changed feature | Conditions held fixed | Consequence in the model |
+| --- | --- | --- |
+| Physical density of an active stack | Data-lane count and effective per-lane rate | Installed ordinary capacity can change while calculated peak bandwidth stays the same; the Micron density alternatives provide an interface example [S01]. |
+| Exposed address depth within active memory | Physical parts, active lanes and their effective rate | Exposed capacity changes without requiring a change in external width or calculated peak. Whether such a restriction exists is a separate product-specific hypothesis. |
+| Number of active complete identical stacks, or identical channel partitions | Data width and ordinary capacity per partition, full depth exposure and effective per-lane rate | Active width, exposed capacity and calculated peak change proportionately. Partially active stacks require a finer model than a whole-stack on/off assumption. |
+| Effective signaling rate | Active width, physical parts and exposure | Calculated peak changes without requiring a capacity change. Qualification, power and thermal limits still constrain the choice. |
+
+For a **same-width comparison**, first verify the physical SKU, data-lane definition, generation and capacity convention. At the same active width, a different calculated peak reflects a different effective per-lane rate in the equal-rate model; it does not identify extra memory. At the same width and rate, differing capacities can still come from lower-density parts or restricted exposure. The width-normalized $c_e$ describes the difference without deciding between those constructions.
+
+Uniform rate, uniform density and uniform activation are **distinct assumptions**. The bandwidth equation assumes a common $r$; it does not assume identical $d_i$, identical active fractions or whole-stack-only activation. The [capacity-constraint model](capacity-constraints.md) states the additional conditions required to reject a proposed density or disabling mechanism.
+
+Qualification depends on controller addressing, package, timing, power and thermal constraints. These relationships establish possibilities within their assumptions, not universal part interchangeability or a manufacturing motive.
 
 ## 5. Installed, accessible, healthy and validated are different
 
@@ -142,6 +163,8 @@ Exceeding stock **free** memory may merely reclaim reservations. Testing an addr
 
 Managed allocations can exceed device memory and migrate to host memory on supported CUDA systems [S30]. NVIDIA also documents reservations, ECC accounting, retired pages and remapping [S31]. These are concrete alternatives to interpreting every capacity-report change as new DRAM. Record allocation backend, device identity, residency evidence, ECC, clocks, temperatures and errors.
 
+**A product-specific discriminator:** the A30 product brief, printed p.1, states that its native HBM2 ECC has no memory-capacity or bandwidth overhead [S06]. Explaining its nominal 24 GB as a hypothetical 32 GB of ordinary payload minus 8 GB consumed solely by ECC contradicts that accounting description. This does not prove the physical population, make ECC cells ordinary payload, or establish that runtime reservations are zero; the statement must not be generalized to every GPU.
+
 Practical usability is a separate workload question. A configuration may pass a capacity test while lacking reliable drivers, required instructions, adequate bandwidth or workload stability. Report its operating envelope rather than hiding these conditions inside a capacity number.
 
 ## 6. Apply the screen without promoting assumptions to specifications
@@ -163,7 +186,7 @@ An ordinary ratio does not exclude hidden capacity. An unusual ratio may reflect
 
 Production-time substitution is a plausible **conditional hypothesis**: a qualified higher-density assembly might be economical when a nominally cheaper input is unavailable. Existing inventory nevertheless has opportunity cost, qualification and yield may differ, and HBM is package-integrated rather than freely interchangeable as any board component. A shortage announcement neither dates an individual board nor establishes its bill of materials.
 
-The [lot-history model](lot-history.md) details the economic comparison and date distinctions. Predeclare product identity, revision/date interval, observation criteria and stopping rule. Repeatedly moving a proposed cohort after negative results would make the claim effectively unfalsifiable. A failed recovery method rejects that method under its tested conditions; it does not alone establish absence of physical capacity. A positive sample establishes that sample, not market prevalence.
+The [lot-history model](lot-history.md) details the economic comparison and date distinctions; the [manufacturing-causality model](manufacturing-causality.md) separates production stages and competing causes. Predeclare product identity, revision/date interval, observation criteria and stopping rule. Repeatedly moving a proposed cohort after negative results would make the claim effectively unfalsifiable. A failed recovery method rejects that method under its tested conditions; it does not alone establish absence of physical capacity. A positive sample establishes that sample, not market prevalence.
 
 The [market protocol](market.md) treats price as a secondary signal. AI demand, performance-only changes, adapters, supply releases, condition and speculation can produce the same pattern. A revision-specific verified transaction premium can justify collecting hardware evidence, but it cannot prove hidden memory or manufacturing cause. This release has no validated market time series or significance claim.
 
@@ -178,7 +201,8 @@ Related fields contribute distinct tests: **computer architecture** establishes 
 ## ERROR CHECK
 
 - Lane counts are dimensionless; bit/byte conversion is explicit. Raw clocks differ from effective rates.
-- Ordinary data capacity excludes parity and spares. Effective width does not count physical stacks.
+- Ordinary data capacity excludes parity and spares. Effective width does not identify the exact physical stack count; a lower bound requires a verified active interface and maximum lanes per stack.
+- HBM2E and HBM3 channel widths differ. Interface granularity does not establish a GPU's disabling controls; uniform rate, density and activation remain separate assumptions.
 - Reference density is a stated comparator, not an invented minimum; thresholds are uncalibrated.
 - Non-identifiability is an information-limit proof; the restricted higher-density board is hypothetical.
 - Accessible and healthy locations intersect rather than forming an assumed capacity ordering. Validation remains conditional on finite coverage.

@@ -1,8 +1,8 @@
 # Current ranking of HBM hypotheses
 
-[日本語](current-ranking.ja.md) · [Home](../README.md) · [Theory refinements](inference-refinement.md) · [Sources](sources.md) · [CSV](../data/current_ranking.csv)
+[日本語](current-ranking.ja.md) · [Home](../README.md) · [Capacity constraints](capacity-constraints.md) · [Manufacturing causes](manufacturing-causality.md) · [Sources](sources.md) · [CSV](../data/current_ranking.csv)
 
-**v0.7.0 — 2026-11-26. Desk research; no original hardware measurements.**
+**v0.8.0 — 2026-11-26. Desk research; no original hardware measurements.**
 
 ## 1. What this ranking means
 
@@ -11,6 +11,8 @@ We predict which named accelerator configurations could contain ordinary-data HB
 **Ranks 1–3 are tied, qualitative tiers of how specifically the current evidence motivates a physical-excess hypothesis.** They are our comparative judgment, not measured likelihoods, availability, buying recommendations or recovery success rates. Within a tier the evidence does not support a finer order. A rank-1 hypothesis is still weak. If one requires evidence of *healthy* excess before ordering candidates, the novel hypotheses cannot presently be ranked by that criterion.
 
 The judgment favors a capacity-specific lead or an identifiable same-family comparison over a generic shortage story, and favors a concrete package/density mechanism over an unspecified larger-memory possibility. Ordinary configurations, evidence quality and missing compatibility assumptions count against a hypothesis. This is not a points formula. The reasons below make the judgment reviewable.
+
+**Why v0.8 preserves the tiers:** the new deductions are necessary conditions for existing specifications and explicitly assumed parts to coexist. They do not identify a candidate's actual parts or a new production cohort. The mechanism section below and CSV `mechanism_constraint` field make the hypotheses more specific; mathematical narrowing is not an increase in discovery probability.
 
 | Evidence question | Status for all 11 new predictions |
 | --- | --- |
@@ -37,6 +39,20 @@ Nominal GB-class scenarios below are **conditional total constructions**, not me
 | 3 | **CMP 100-210** — 16 GB class | Distinct board families permit cohort hypotheses, while reported gains so far concern performance rather than additional capacity. [S04,S08,S14,S33] | 32 GB class only for an independently identified higher-density assembly. | An ordinary V100-derived 16 GB assembly explains the known configuration. | Actual high-density memory parts on an identified 16 GB variant, rather than extra compute units or link speed. |
 | 3 | **XFX BC-160** — 8 GB reported | HBM-equipped mining derivative fits the product-segmentation mechanism in principle. [S50,S51,S52] | 16 GB class only if two compatible 8 GB-class stacks were populated. | Ordinary 8 GB / 2048-lane configurations exist; a shipped 16 GB Navi 12 counterpart has not been established in the reviewed evidence. | A compatible higher-density production part/package reference tied to BC-160. |
 | 3 | **A30X** — 24 GB | A special HBM2e converged product permits a density substitution hypothesis, but the width is not sourced. [S01,S10,S11] | 48 GB class if three compatible 16 GB-class stacks exist with partial exposure. | Three 8 GB-class stacks and faster signaling can explain the capacity/bandwidth; that is a model, not a measured topology. | Sourced effective width plus actual memory part/population; bandwidth alone does not identify density. |
+
+### Mechanisms narrowed in v0.8
+
+These are conditional consequences of the [channel-partition model](capacity-constraints.md). They require common capacity units, ordinary-data versus reservation accounting, and assumptions about payload per channel. The densities are not identified parts on candidate units.
+
+| Candidate | Explanation narrowed | Most useful next documentary input |
+| --- | --- | --- |
+| A30 [S06] | A uniform 8 GB-class model exposes all 24 GB behind its active width, so excess in that model belongs to inactive regions. A 16 GB-class model needs partial exposure within active regions. Native ECC alone cannot explain a 32-to-24 GB payload reduction under the product's stated accounting. | A package mapping establishing both count and density. |
+| MI50 16 GB [S38,S80] | At 4096 lanes with uniform 8 GB-class density, whole-stack disable alone cannot produce 16 GB. A reduction within active regions is needed. A 4 GB-class density remains an ordinary explanation. | Original 16 GB package-part density; another mention of the normal 32 GB product is insufficient. |
+| A800 40 GB Active [S71] | At 5120 lanes, an 8 GB-class density fits full exposure. A 16 GB-class hypothesis additionally requires partial exposure inside active regions and qualified compatibility. | Exact package/part identity, density and compatibility documentation. |
+| RX Vega 64 8 GB [S45–S49] | A two-stack high-density hypothesis retaining the sourced 2048 lanes cannot be explained just by stopping one whole stack. Ordinary lower-density parts remain a competing model. Do not transfer an unverified width to a different Vega variant. | Parts on the original RX package, not parts imported from a Frontier Edition comparison. |
+| H100 SXM5 64 GB, CMP 100-200, PG199, A30X | Missing same-configuration active width prevents assigning a depth-exposure fraction. Borrowed family widths produce conditional examples, not results for these devices. | Width and part documentation tied to the exact SKU. H100 NVL HBM3 specifications cannot be transferred to the 64/94 GB HBM2e configurations. |
+
+Repeated specifications are not additional units with identified population. Capacity, width and their calculated ratio are also not three independent pieces of evidence.
 
 ### Why these tiers, and how they can change
 
@@ -69,7 +85,7 @@ Intel is deliberately **outside the novel prediction tiers**. A physical fact sh
 | **GB300 Desktop / DGX Station 252 GB** [S74,S75,S79] | Topology watch. Seven 36 GB-class stacks could explain 252 GB; the server design has eight. The desktop's eighth memory stack has not been identified. | A real eighth stack and its part identity on the exact desktop package. Coherent CPU memory is separate. |
 | **Intel Max 1350** [S56] | Historical product watch; announcement/withdrawal coverage does not establish a supply of production cards or physical HBM count. | Actual production-unit provenance and population information. |
 | **Ascend 910B4** [S57] | Cross-vendor NPU watch based on a research synthesis, outside the GPU ranking. Proportional 32/64 GB and 800/1600 GB/s differences permit an ordinary active-interface explanation. | Primary SKU/topology documentation and a specific extra-population clue. |
-| **H100 NVL 94 GB** [S72] | Ordinary geometry comparison. Proportional capacity/width reduction is consistent with normal channel selection; it neither proves nor rules out disabled physical memory. | Candidate-specific population evidence before assigning a hidden-capacity prediction. |
+| **H100 NVL 94 GB** [S72,S82] | Geometry reference. If 6016 lanes is actual active data width and each stack supplies at most 1024, at least six real stacks supply the width. If each full native interface is exactly 1024 lanes, a whole-stack-only on/off model is impossible. Density, a 96 GB physical total and healthy excess remain unestablished. | Part density, population and candidate-specific channel mapping. Standard channel width does not establish GPU disable controls. |
 | **AMD MI300A/MI300X and Alveo U280/U50/U55C** [S58,S59,S76] | Ordinary density or allocation-policy comparisons. The default MI300A allocation limit does not create memory beyond the advertised total. | An anomaly on an identified physical lower-capacity product, not different SKU specifications. |
 
 We remain vendor-neutral. Intel has a direct physical reference, AMD has useful density and historical manufacturing comparisons, and NVIDIA has more identified derivative leads in this evidence set. That distribution is not a conclusion that only NVIDIA could use the mechanism.

@@ -2,7 +2,7 @@
 
 [Current ranking](current-ranking.md) · [日本語ランキング](current-ranking.ja.md) · [参加案内](call-for-participants.ja.md) · [Contribute](call-for-participants.md)
 
-**Status: draft prepared; no post is recorded here. / 状態：下書き。ここには投稿済みの記録はありません。** These drafts introduce the research and invite evidence. They do not claim a newly verified capacity increase. A public post, account or publication time must be recorded only after it is actually confirmed.
+**Status: outreach deferred, 2026-11-26. Historical drafts only; no post is recorded here. / 状態：紹介は保留。過去の下書きとして保存し、投稿済みの記録はありません。** These drafts introduce the research and invite evidence. They do not claim a newly verified capacity increase. A public post, account or publication time must be recorded only after it is actually confirmed.
 
 ## Main post / 日本語の主投稿
 
