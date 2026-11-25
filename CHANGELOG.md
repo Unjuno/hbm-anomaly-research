@@ -1,5 +1,9 @@
 # Changelog
 
+## 0.6.0 — 2026-11-26
+
+Adds a historical-trigger shortlist and source-backed product-specific H20/MI308 supply evidence. Highlights the official H100 SXM5 64/94 GB HBM2e configurations, A800 Active, H100 and Blackwell variants; retains ordinary explanations and old rankings. MI308X 192 GB reports prevent assigning an unsupported small-capacity baseline. No original hardware tests, verified new market prices, or recovery claim.
+
 ## 0.5.0 — 2026-11-26
 
 Adds a cross-vendor research-priority ranking and CSV, with Intel GPU Max 1100's documented physical excess (not established healthy or recoverable capacity), AMD MI50, RX Vega, BC-160, the RX 480 historical GDDR5 positive report and contemporary supply explanation, and separate non-GPU/ordinary comparisons. Retains v0.4.0 as a historical NVIDIA-only forecast. No new hardware measurements, calibrated probabilities or price adjustments.

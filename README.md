@@ -4,9 +4,11 @@
 
 [日本語](README.ja.md) · [Detailed ranking](docs/candidates.md) · [Ranking method](docs/ranking-method.md) · [Physical theory](docs/theory.md) · [Manufacturing history](docs/lot-history.md) · [Sources](docs/sources.md)
 
-**v0.5.0 — 2026-11-26. Desk research; no original hardware measurements.** Our main output is a reasoned prediction: what looks suspicious, why, what ordinary explanation competes with it, and what would change the order. Hardware ownership is not required to contribute a better hypothesis or source.
+**v0.6.0 — 2026-11-26. Desk research; no original hardware measurements.** Our main output is a reasoned prediction: what looks suspicious, why, what ordinary explanation competes with it, and what would change the order. Hardware ownership is not required to contribute a better hypothesis or source.
 
-> **v0.5.0 (2026-11-26) — expanded cross-vendor lead ranking.** The previous NVIDIA-only ranking suffered from selection bias. Intel Max 1100 has manufacturer-documented physically present disabled HBM; AMD RX 480 provides a historical, non-HBM supply/lot precedent. [Expanded analysis](docs/cross-vendor-ranking.md) · [日本語](docs/cross-vendor-ranking.ja.md) · [CSV](data/cross_vendor_leads.csv). Investigation priority is not the probability of healthy extra memory or software recovery.
+> **v0.6.0 — historical-trigger expansion (2026-11-26).** New strongest lead: official H100 SXM5 64/94 GB HBM2e variants. Product-specific H20/MI308 inventory shocks, late A800 Active, and Blackwell memory variants are examined separately. [New-lead ranking and reasoning](docs/historical-trigger-screen.md) · [日本語](docs/historical-trigger-screen.ja.md) · [CSV](data/historical_trigger_leads.csv). All new capacity scenarios are unverified; the earlier cross-vendor list remains a separate snapshot.
+
+> **Historical v0.5.0 (2026-11-26) — expanded cross-vendor lead ranking.** The previous NVIDIA-only ranking suffered from selection bias. Intel Max 1100 has manufacturer-documented physically present disabled HBM; AMD RX 480 provides a historical, non-HBM supply/lot precedent. [Expanded analysis](docs/cross-vendor-ranking.md) · [日本語](docs/cross-vendor-ranking.ja.md) · [CSV](data/cross_vendor_leads.csv). Investigation priority is not the probability of healthy extra memory or software recovery.
 
 | Priority | Candidate | Nominal capacity | Conditional total / physical finding | Why suspicious | Strongest alternative / limitation |
 | ---: | --- | --- | --- | --- | --- |

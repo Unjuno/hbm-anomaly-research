@@ -8,3 +8,7 @@ event_date,date_type,entity,observed_event,inference_limit,source_id
 2022-01-30,fiscal_period_end,NVIDIA,FY2022 Form 10-K procurement at least 12 months ahead vs ~6 historically,Company-wide; no specific HBM shortage or surplus documented,S22
 2022-09-15,protocol_event,Ethereum,Mainnet proof-of-stake Merge,Mining demand shock; no evidence of specific inventory reassignment,S27
 2023-01-29,fiscal_period_end,NVIDIA,FY2023 Form 10-K supply-demand mismatch by platform,Company-wide; no specific BOM substitution documented,S29
+2025-04-09,licensing_notice,NVIDIA,H20-specific licensing requirement notice,No GPU physical changes established,S65
+2025-04-27,fiscal_period_end,NVIDIA,H20 inventory and purchase obligation provision plus material reuse,Accounting amounts not part counts or destination SKUs,S65
+2025-07-27,fiscal_period_end,NVIDIA,Provision release on H20 sales outside China,Resale not evidence of changed HBM,S67
+2025-04-01,month_precision,AMD,April 2025 MI308-specific license requirement change,Date only month precision; not BOM change,S68

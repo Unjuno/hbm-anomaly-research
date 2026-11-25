@@ -2,7 +2,7 @@
 
 [English](README.md) · [詳しい予想ランキング](docs/ranking.ja.md) · [順位の考え方](docs/ranking-method.md) · [理論的背景](docs/research-framework.ja.md) · [製造ロット](docs/lot-history.md) · [出典](docs/sources.md)
 
-**v0.5.0 / 2026年11月26日。机上研究。独自の実機測定は行っていない。**
+**v0.6.0 / 2026年11月26日。机上研究。独自の実機測定は行っていない。**
 
 ## このリポジトリの目的
 
@@ -10,7 +10,9 @@
 
 成果物は、予想ランキング、個別の理由、条件付き容量シナリオ、反対材料、順位を変える情報である。実機がなくても、仕様、製品の系譜、部材の密度、製造時期、供給事情を比較して予想は立てられる。事実と推論の境界を明示して、その予想を公開する。
 
-> **v0.5.0（2026-11-26）メーカー横断版。** 従来のNVIDIA中心の探索を見直した。Intel Max 1100の物理余剰HBMは公式記載。AMD RX 480はGDDR5のロット別容量制限の先例。[メーカー横断ランキング](docs/cross-vendor-ranking.ja.md) · [English](docs/cross-vendor-ranking.md) · [CSV](data/cross_vendor_leads.csv)。以下は具体的な疑いの調査順位であり、正常性や解除成功確率ではない。
+> **v0.6.0 — 歴史イベント起点の追加探索（2026-11-26）。** 新規1位は公式資料にあるH100 SXM5 64 GB HBM2e版（同規格94 GB版も確認）。H20とMI308の製品固有の在庫問題、後期A800、Blackwell派生も追加。[新規調査順位と根拠](docs/historical-trigger-screen.ja.md) · [English](docs/historical-trigger-screen.md) · [CSV](data/historical_trigger_leads.csv)。すべて条件付きの予想・比較であり、実機測定なし。従来のメーカー横断順位は下に履歴として残す。
+
+> **旧v0.5.0（2026-11-26）メーカー横断版。** 従来のNVIDIA中心の探索を見直した。Intel Max 1100の物理余剰HBMは公式記載。AMD RX 480はGDDR5のロット別容量制限の先例。[メーカー横断ランキング](docs/cross-vendor-ranking.ja.md) · [English](docs/cross-vendor-ranking.md) · [CSV](data/cross_vendor_leads.csv)。以下は具体的な疑いの調査順位であり、正常性や解除成功確率ではない。
 
 | 優先順位 | 製品 | 公称容量 | 容量シナリオ・確認事項 | 疑う理由 | 反対材料 |
 | ---: | --- | --- | --- | --- | --- |
