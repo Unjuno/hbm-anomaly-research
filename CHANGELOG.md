@@ -1,5 +1,15 @@
 # Changelog
 
+## v0.10.0 — 2026-11-26
+
+- Withdraw the similarity-based tiers for all 11 novel hypotheses; preserve old tiers in `v09_recurrence_tier` and retain all 26 reference/watch/hypothesis entries.
+- Replace family resemblance with a target-specific ordinary-configuration test. Add bilingual proofs, explicit variable definitions, a bandwidth/capacity envelope, uncertainty limits and counterexamples.
+- Add eight manufacturer-described HBM part classes with density and speed tied together. Include SK hynix's 2016 available 2 GB/1024-lane/2.0 Gb/s lineup, which weakens the CMP 100-200 capacity-only argument.
+- Show ordinary simultaneous capacity/bandwidth models for MI50 16 GB and A30X. Keep 170HX as a conditional historical reference, including a 2.4 Gb/s low-density sensitivity case rather than claiming the catalog is complete.
+- Separate a documentary investigation order from the likelihood of physical excess. History and lots need a target-specific manufacturing connection; no numerical probabilities or price-based adjustment added.
+- Correct S43: the checked MI50 reference concerns PCB/VBIOS and CPU-visible BAR differences, not established physical HBM densities. Fix the source-table break and qualify the historical performance chronology.
+- No new hardware observations; physical population, health and access remain separate. X publication remains deferred.
+
 ## 0.9.1 — 2026-11-26
 
 Restores performance/part mismatch as a complementary forecast axis, anchored by the October 2023 archived 170HX review. Separates measured clpeak bandwidth and FMA/non-FMA from device-query theoretical peaks; adds a bilingual analysis, exact provenance ledger, and capacity-normalized comparisons of A30X/MI50/A30 with ordinary alternatives. No invented test conditions, new hardware result, or price adjustment. Historical v0.9 recurrence tiers unchanged; no X publication.

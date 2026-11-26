@@ -1,5 +1,7 @@
 # Performance mismatch screening: the historical 170HX reference
 
+> **v0.10 correction:** The comparator ratios below are descriptive, not a diagnostic score for excess memory. Ordinary parts can simultaneously explain A30X and MI50 capacity and bandwidth. The former recurrence tiers are withdrawn; see the [ordinary-model test](diagnostic-inference.md) and [current assessment](current-ranking.md).
+
 [日本語](performance-gap.ja.md) · [Current ranking](current-ranking.md) · [Recurrence hypotheses](recurrence-hypotheses.md) · [Capacity constraints](capacity-constraints.md) · [Data](../data/performance_gap_observations.csv)
 
 **v0.9.1, 2026-11-26. Documentary forecasts; no original measurements.** Restore the original discovery axis: discrepancies between advertised capacity, memory performance and the capabilities of the underlying parts. Historical recurrence and lot-specific incentives are complementary, not replacements.
@@ -65,7 +67,7 @@ A mismatch is a deviation from a declared comparator, not an established statist
 
 ## 4. Keep the two evidence axes
 
-The performance/part axis uses capacity, width, effective rate, theoretical versus measured memory throughput, and instruction-class performance. The history/cohort axis uses precedent, purpose, part lineage, contemporary supply and the production/configuration decision. Prioritize their intersection, without assuming probabilistic independence or adding arbitrary scores. The v0.9 recurrence tiers remain visible; this is a complementary screen, not a new ordering of healthy/recoverable capacity.
+The performance/part axis uses capacity, width, effective rate and theoretical versus measured memory throughput. Compute restrictions are assessed separately from physical capacity. History/cohort evidence must identify an applicable part, process or allocation pathway rather than only a shared family. In v0.10 the former recurrence tiers are withdrawn: comparator ratios and resemblance do not supply an excess-memory ordering. The [ordinary-model test](diagnostic-inference.md) asks whether the target observations fit period parts simultaneously.
 
 A later same-card external comparison reports 1592 to 1599 GB/s at a 256 MB working set while compute performance changes substantially [S89]. This is consistent with selective restriction, but is not a capacity-only intervention or validation of all addresses. Do not import later outcomes into the historical forecast inputs.
 

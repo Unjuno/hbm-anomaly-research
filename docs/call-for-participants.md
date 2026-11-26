@@ -2,7 +2,7 @@
 
 [日本語](call-for-participants.ja.md) · [Current ranking](current-ranking.md) · [Sources](sources.md) · [Contributing](../CONTRIBUTING.md)
 
-**Can a specific accelerator or production lot contain ordinary-data HBM beyond its advertised capacity?** This project publishes explicit, unverified predictions from specifications, product history and manufacturing constraints. Its main output is the reasoning and ranking. Physical presence, memory health and practical accessibility are separate claims.
+**Can a specific accelerator or production lot contain ordinary-data HBM beyond its advertised capacity?** This project compares specifications with period part capabilities and forecasts from target observations that ordinary constructions struggle to explain. v0.10 withdraws the previous similarity-based tiers and publishes candidate-specific countermodels and missing information. Physical presence, memory health and practical accessibility are separate claims.
 
 We welcome **a useful source or counterexample**, as well as observations from people who already own relevant hardware. You do not need a GPU, a completed experiment or a positive result to contribute.
 

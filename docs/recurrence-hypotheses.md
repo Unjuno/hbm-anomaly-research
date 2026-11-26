@@ -1,5 +1,7 @@
 # Forecasting recurrence across generations and production cohorts
 
+> **v0.10 correction:** This document supplies historical hypothesis-generating context. Similarity-based ranking tiers are withdrawn. Target evidence distinguishing ordinary and excess-memory models is assessed in the [current assessment](current-ranking.md) and [inference method](diagnostic-inference.md).
+
 [日本語](recurrence-hypotheses.ja.md) · [Current ranking](current-ranking.md) · [Precedent ledger](../data/capacity_precedents.csv) · [Manufacturing causes](manufacturing-causality.md) · [Capacity constraints](capacity-constraints.md) · [Sources](sources.md)
 
 **v0.9.0 — 2026-11-26 JST. Documentary forecasts; no new hardware measurements.**

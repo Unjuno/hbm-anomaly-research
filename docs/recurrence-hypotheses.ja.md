@@ -1,5 +1,7 @@
 # 世代と製造群をまたぐ再発を予想する
 
+> **v0.10訂正:** この文書は歴史から仮説を作る背景資料です。類似性による旧順位は撤回しました。通常構成と余剰構成を区別する対象固有の情報は[現行評価](current-ranking.ja.md)と[推論の方法](diagnostic-inference.ja.md)で扱います。
+
 [English](recurrence-hypotheses.md) · [現在のランキング](current-ranking.ja.md) · [先例台帳](../data/capacity_precedents.csv) · [製造原因](manufacturing-causality.ja.md) · [容量制約](capacity-constraints.ja.md) · [出典](sources.md)
 
 **v0.9.0 — 2026-11-26 JST。公開資料からの予想であり、新しい実機測定はない。**
