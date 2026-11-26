@@ -1,6 +1,6 @@
 # Historical-trigger screening: new HBM leads, 2026-11-26
 
-> **Historical analysis. Use the [v0.7 current ranking](current-ranking.md) for the current tiers and categories. Earlier ordinals are retained as the judgment of that release.**
+> **Archive v0.6.0; not the current assessment.** [Current analysis](historical-context.md) · [Document index](README.md)
 
 [日本語](historical-trigger-screen.ja.md) · [Cross-vendor v0.5 ranking](cross-vendor-ranking.md) · [CSV](../data/historical_trigger_leads.csv) · [Sources](sources.md)
 
@@ -38,3 +38,4 @@ H100 NVL 94 GB has 6016 data lanes and 3938 GB/s [S72, page image checked]. Rela
 Blackwell B200 180 versus nominal 192 GB [S73] and B300 270 versus 288 GB [S64,S74] may reflect accounting, revision, yield-related exclusions, or different configurations; require exact bytes and same SKU before attributing them to physical excess. Both nominal label ratios are 93.75%, not proof of a specific partition mechanism. GB300 Desktop/DGX Station 252 GB and 7.1 TB/s versus full 288 GB and 8 TB/s [S74,S75] is roughly proportional (87.5% capacity, 88.75% bandwidth); seven actual 36 GB-class stacks can account for it. Do not include Grace CPU memory. Blackwell low-yielding material provisions [S67] make defective-resource harvesting a meaningful counterhypothesis.
 
 AMD Alveo 8/16 GB with different pseudo-channel capacities and distinct FPGA designations [S76] is an ordinary comparator, outside the core GPU scope. Existing Intel Max 1100, CMP, and AMD Vega/MI50 leads remain in the previous cross-vendor ranking. This focused new-lead order is not a single calibrated ordering over all devices. Hardware support does not establish actual sales or volume. No new verified transactions or original measurements are presented.
+

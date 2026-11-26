@@ -1,8 +1,6 @@
 # 隠れたHBM容量を疑う予想ランキング
 
-> **過去版の考察です。現行の順位・区分は[v0.7統合ランキング](current-ranking.ja.md)を参照してください。旧順位は当時の判断として残しています。**
-
-> v0.4.0のNVIDIA中心の予想履歴。現在の調査順位は[メーカー横断ランキング](cross-vendor-ranking.ja.md)を参照。Intelの物理余剰確認は正常な追加容量の予想とは区別する。
+> **旧版 v0.4.0。現行の判断ではありません。** [現在の資料](current-ranking.ja.md) · [資料一覧](README.md)
 
 [日本語README](../README.ja.md) · [English ranking](candidates.md) · [順位の考え方](ranking-method.md) · [理論](research-framework.ja.md) · [予想データ](../data/hypotheses.csv) · [出典](sources.md)
 
@@ -165,3 +163,4 @@ A100を主順位外に置くことにも判断が入る。派生SKUへの転用�
 - 不明な実装を事実にせず、不明だから存在しないともしていない。
 - 2位と3位の弱い差、A100を主順位外に置く判断、価格補正なしを明記した。
 - 新しい実機測定・追加容量成功・製造理由・価格トレンドを発見したとは主張していない。
+

@@ -1,8 +1,6 @@
 # Ranked hypotheses: which HBM products look suspicious, and why?
 
-> **Historical analysis. Use the [v0.7 current ranking](current-ranking.md) for the current tiers and categories. Earlier ordinals are retained as the judgment of that release.**
-
-> Historical NVIDIA-only v0.4.0 snapshot. For the expanded current investigation order, see [cross-vendor ranking](cross-vendor-ranking.md). The earlier five predictions are preserved for comparison; Intel's documented physical surplus is a distinct evidence class.
+> **Archive v0.4.0; not the current assessment.** [Current analysis](current-ranking.md) · [Document index](README.md)
 
 [Home](../README.md) · [日本語ランキング](ranking.ja.md) · [Ranking method](ranking-method.md) · [Physical theory](theory.md) · [Sources](sources.md)
 
@@ -145,3 +143,4 @@ Public desk research is sufficient to propose and revise the ranking. Hardware o
 - Performance, identity, BAR and broad supply events are not memory-capacity measurements.
 - Defects can undermine the healthy-extra hypothesis without refuting physical population.
 - Existing positive reports are comparison cases; ordinary configurations remain explicit alternatives.
+

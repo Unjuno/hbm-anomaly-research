@@ -1,8 +1,6 @@
 # How the hypothesis ranking is made
 
-> **Historical analysis. Use the [v0.7 current ranking](current-ranking.md) for the current tiers and categories. Earlier ordinals are retained as the judgment of that release.**
-
-> Historical NVIDIA-only v0.4.0 snapshot. For the expanded current investigation order, see [cross-vendor ranking](cross-vendor-ranking.md). The earlier five predictions are preserved for comparison; Intel's documented physical surplus is a distinct evidence class.
+> **Archive v0.4.0; not the current assessment.** [Current analysis](diagnostic-inference.md) · [Document index](README.md)
 
 [Home](../README.md) · [Candidate ranking](candidates.md) · [Physical theory](theory.md) · [Manufacturing context](lot-history.md) · [Sources](sources.md)
 
@@ -103,3 +101,4 @@ Hardware owners may contribute observations that improve later editions. The [st
 - The second/third ordering and A30-versus-A100 preference reveal their judgment dependence.
 - Shared generation, broad shortages and unverified price movements do not independently establish a candidate-specific anomaly.
 - Direct observations, ordinary alternatives, explicit assumptions and predictions remain distinguishable.
+

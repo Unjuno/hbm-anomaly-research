@@ -1,5 +1,10 @@
 # Changelog
 
+## v0.12.0 — 2026-11-27
+
+- Make the research readable: short bilingual landing pages, a single current candidate table, a concise inference proof and historical summary, and a three-field contribution guide. Add one document index for technical references.
+- Separate historical ranking pages from the current view; retain the complete pre-edit text in the immutable v0.11 snapshot. No data, source IDs, capacity findings or evidence classifications changed. The first four candidates are a documentary research focus, not a new probability ranking. No X publication.
+
 ## v0.11.0 — 2026-11-26
 
 - Add bilingual historical analysis and 18 source entries, prioritizing manufacturer announcements, filings, technical documents and discontinuance notices; separately label an attributable AMD statement carried by a news article.

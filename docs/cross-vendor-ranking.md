@@ -1,6 +1,6 @@
 # Cross-vendor HBM research priorities (v0.5.0)
 
-> **Historical analysis. Use the [v0.7 current ranking](current-ranking.md) for the current tiers and categories. Earlier ordinals are retained as the judgment of that release.**
+> **Archive v0.5.0; not the current assessment.** [Current analysis](current-ranking.md) · [Document index](README.md)
 
 [日本語](cross-vendor-ranking.ja.md) · [Home](../README.md) · [Source register](sources.md) · [CSV](../data/cross_vendor_leads.csv)
 
@@ -52,3 +52,4 @@ AMD announced 4 GB and 8 GB GDDR5 SKUs in June 2016 [S53]. TechPowerUp bought a 
 Use three evidence routes: (1) physical topology statements even when the capacity-to-bandwidth ratio looks ordinary; (2) capacity-specific configuration discrepancies and known higher-density siblings; (3) sourced manufacturing transitions, shortage timing and compatible package reuse. Do not infer healthy memory from physical presence, a permanent-disable flag, an EEPROM label, or a shared PCB. The AMD RX 480 example supports the mechanism across manufacturers, not the assumption that it occurred on any particular HBM SKU. Search part numbers, PCNs, official datasheets, original board photographs and contemporaneous supply coverage across vendors. Treat an unobserved lot as unknown; do not invent a favorable production date.
 
 See the [historical NVIDIA-only forecast](candidates.md) for v0.4.0 assumptions and the [ranking method](ranking-method.md) for comparative reasoning. The expanded list is non-exhaustive, lacks representative samples and has no calibrated recovery probability or verified price trend. A negative result on one known lot does not reject every lot, but lack of data is not positive evidence. All new sources [S39–S59] are in the [source register](sources.md).
+
