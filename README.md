@@ -4,9 +4,23 @@
 
 [日本語](README.ja.md) · [Current assessment](docs/current-ranking.md) · [Inference and proof](docs/diagnostic-inference.md) · [Part constraints](data/hbm_part_constraints.csv) · [Sources](docs/sources.md)
 
-**v0.10.0 — 2026-11-26. Public-source research; no original hardware measurements.**
+**v0.11.0 — 2026-11-26. Public-source research; no original hardware measurements.**
 
-## Correction to the ranking
+## Historical investigation: specific pathways and comparison groups
+
+**v0.11 adds 18 source entries connecting market changes, capacity-variant introductions and supply plans to particular hypotheses.** Existing documents can predict which package or configuration differences should appear across a transition, without our owning the hardware.
+
+| Investigation focus | What became more specific |
+| --- | --- |
+| **Later GA100 / A800 products** | NVIDIA disclosed China Data Center-related inventory charges and alternative A800 sales in late 2022. This supplies a specific motive to investigate qualified-package reassignment; the memory content and manufacturing stage of the inventory remain unknown [S96,S99] |
+| **MI50 16 / 32 GB variants** | An attributable 2019 AMD statement explains adding the 32 GB product. Compare factory-16 GB cohorts with dated capacity-variant packages; ordinary 4 GB parts and a legitimate 32 GB sales outlet remain alternatives [S103,S104,S101] |
+| **RX Vega, late 2017–2018** | Samsung's high-density expansion plan and SK hynix's HBM2 supply plan define a useful interval for supplier/package comparison. Neither surplus high-density stock nor a target implementation change is established [S47,S100] |
+
+Conversely, A30X already had a product plan in 2021, and ordinary 8 GB comparison products for BC-160 existed in 2020. Later shortages or repurposing do not require hidden higher-density memory [S97,S105,S109]. These findings update manufacturing-pathway plausibility and comparison groups; an excess-capacity ranking still needs target-specific capacity, throughput or part evidence.
+
+[Full historical analysis](docs/historical-context.md) · [11-candidate update CSV](data/history_assessments.csv) · [Events with distinct date types](data/supply_events.csv)
+
+## The v0.10 correction
 
 The previous tiers 1–3 primarily ranked similarity of product purpose, architecture and historical precedents. They did not establish which target observation was better explained by excess memory than by an ordinary assembly. **We withdraw the tiers for all 11 novel hypotheses.** Earlier values remain in `v09_recurrence_tier` and Git history.
 

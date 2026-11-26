@@ -78,3 +78,10 @@ Initial exploratory target: at least two independent owners per early/middle/lat
 CMP 170HX: compare 1585/1586 and other documented variants as external controls; establish dates independently, do not infer package origin from IDs. CMP 100-200 and 100-100: date/board IDs, donor generation, and memory part markings; older silicon may have been packaged or repurposed later. A30: compare early/late 24 GB boards and distinct memory-part/PN groups; verify actual chronology before invoking the 2020–22 transition. A30X and PG199: separate qualification and OEM restrictions; negative observations are particularly valuable. V100 16/32 GB and P100 12/16 GB: controls for known capacity differences, not evidence that their advertised SKU masks capacity.
 
 **ERROR CHECK:** This document does not assert a particular excess HBM inventory, compatibility, substitution, or capacity recovery. The inequality is a conditional model; context events are not per-lot evidence. No lot observations have been generated or measured by this project.
+
+
+## v0.11: dated comparisons now available
+
+The [historical investigation](historical-context.md) and [11-candidate ledger](../data/history_assessments.csv) turn general supply stories into specific comparison groups: later GA100 allocation decisions after the 2022 market disruption, MI50 capacity-variant package groups around the publicly acknowledged 32 GB addition, and Vega supplier/package groups around late-2017 supply plans. Those dates select document searches; none is a confirmed factory cutover.
+
+For completed-package reassignment, the original HBM/package date may precede the demand shock. Track package manufacture, board assembly, product allocation, configuration updates and resale separately. CMP170HX's documented post-import VBIOS performance update provides a concrete configuration confounder [S94]. Intel/Altera last-order dates several years before their announced last-shipment dates demonstrate why late sale does not imply late component manufacture [S107,S108].

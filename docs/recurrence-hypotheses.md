@@ -2,11 +2,11 @@
 
 > **v0.10 correction:** This document supplies historical hypothesis-generating context. Similarity-based ranking tiers are withdrawn. Target evidence distinguishing ordinary and excess-memory models is assessed in the [current assessment](current-ranking.md) and [inference method](diagnostic-inference.md).
 
-[日本語](recurrence-hypotheses.ja.md) · [Current ranking](current-ranking.md) · [Precedent ledger](../data/capacity_precedents.csv) · [Manufacturing causes](manufacturing-causality.md) · [Capacity constraints](capacity-constraints.md) · [Sources](sources.md)
+[日本語](recurrence-hypotheses.ja.md) · [Current ranking](current-ranking.md) · [Historical context](historical-context.md) · [Precedent ledger](../data/capacity_precedents.csv) · [Manufacturing causes](manufacturing-causality.md) · [Capacity constraints](capacity-constraints.md) · [Sources](sources.md)
 
-**v0.9.0 — 2026-11-26 JST. Documentary forecasts; no new hardware measurements.**
+**v0.11.0 — 2026-11-26. Documentary forecasts; no new hardware measurements.**
 
-This research forecasts where previously observed or reported capacity restrictions and excess population may recur. Historical precedents are **positive inputs to candidate selection**. They justify looking for a reusable product or manufacturing mechanism across related generations, then predicting the part and production groups in which it would appear.
+This research forecasts where previously observed or reported capacity restrictions and excess population may recur. Historical precedents help **select manufacturing routes and cohorts to investigate**. They justify looking for a reusable product or manufacturing mechanism across related generations, then predicting the part and production groups in which it would appear. General resemblance alone does not justify ranking excess population as more plausible than ordinary construction.
 
 The central question is: **given that related outcomes have occurred before, which existing products and cohorts share the conditions that could produce them again?** A forecast can be useful before its target parts are identified. We record what makes it plausible, where it should cluster, and what would weaken it. Population confirmation and operational health remain separate records.
 
@@ -83,19 +83,21 @@ The arithmetic model remains useful: a normal low-density construction can expla
 
 An arithmetic-only ordinary possibility should not receive the same evidential weight as an identified factory population. Conversely, failing to find a low-density part in an incomplete public catalogue does not establish that no such part existed. The useful forecast states **which concrete ordinary assembly would have to exist to remove the anomaly**, then looks for it.
 
-## 5. Forecast ranking can change before hardware confirmation
+## 5. History updates manufacturing plausibility and the cohorts to investigate
 
-The current ranking now orders **historically motivated recurrence forecasts**. Documentary evidence about part lineage, repeated product decisions, manufacturing windows and the strength of ordinary alternatives can change this order without changing the separate `physical_status` field.
+Contemporaneous sources can make a hypothesis more specific before hardware is available. The first updates concern **whether the proposed manufacturing route was feasible given its period, parts and supply conditions**, and which cohorts would distinguish it from ordinary construction. This work can proceed while the separate `physical_status` field remains unconfirmed. [Historical context](historical-context.md) applies the method to individual candidates and records the direction of each update.
 
-| Forecast tier | Candidates | Reason for the group |
+| Stage | Relationship to examine | What it can update, and its limit |
 | --- | --- | --- |
-| **R1** | CMP 100-200 | A particularly low reported capacity, a 12 GB Volta comparison [S32], and a close unresolved product-line recurrence lead between the Pascal-family and GA100 CMP references. Its missing width prevents claiming a measured bandwidth anomaly; the comparison does not identify its parts |
-| **R2, tied** | A30; PG199; A800 40 GB Active; CMP 100-210; MI50 16 GB; H100 SXM5 64 GB HBM2e | Concrete package-lineage, repeated mining-product, density-transition or same-generation configuration hypotheses, with meaningful ordinary alternatives |
-| **R3, tied** | H100 SXM5 80 GB; RX Vega 56/64; BC-160; A30X | More distant transfer assumptions, stronger ordinary explanations, or missing candidate-specific package relationships |
+| **1. Chronological fit** | Did the supply event precede the assembly, configuration or reassignment decision it is proposed to change? Separate announcement, expected shipment, manufacture and resale dates | Narrow the relevant manufacturing interval and reject explanations with reversed time order. A later reassignment is a separate decision to investigate. Later product introduction alone does not show use of denser parts |
+| **2. Compatible parts and inventory form** | What was constrained, and what was available? Distinguish loose HBM, completed GPU-plus-HBM packages and finished cards in the channel; examine density, signaling, voltage and package compatibility | Support or narrow a specific substitution or reassignment route. An industry-wide shortage or finished-card inventory is not evidence of surplus compatible high-density HBM |
+| **3. Difference from the ordinary explanation** | Could normal-density supply, price reductions or ordinary reuse explain the same event? Which clustering of parts, revisions or settings is predicted specifically by excess population? | Target-specific differences can strengthen the excess-memory hypothesis. Background shared by both constructions can support a feasible route without selecting excess population over the ordinary alternative |
 
-The previous v0.8 specificity tiers are retained in the register's `v08_specificity_tier` field. The change makes the forecast lens explicit. It is not a newly measured success rate, and an equal tier does not imply identical mechanisms.
+These stages do not require every internal record or hardware observation before a forecast can be made. Use established relationships and leave the unresolved ones as explicit conditions. For example, a documented supplier change can identify package groups worth comparing. If normal-density parts can undergo the same change, it does not yet supply evidence of hidden capacity.
 
-Useful reasons to revise a forecast include a better-matched historical precedent, an original part mapping, a corrected ordinary construction, a newly applicable manufacturing event, or a contradiction of the proposed cohort. Repeating the same story on several websites adds no independent recurrence event. A capacity/width ratio calculated from the same specifications is not another independent observation.
+**The R1/R2/R3 tiers withdrawn in v0.10 are not reinstated.** The eleven candidates above are hypotheses to investigate, not a current ranking. The register preserves the old v0.9 tiers in `v09_recurrence_tier` and the old v0.8 specificity tiers in `v08_specificity_tier` as history. Adding general family resemblance does not change the [current assessment](current-ranking.md).
+
+The order of documentary work can change as a testable period, part relationship or cohort becomes more specific. That order is not a hidden-capacity probability ranking or a recovery success rate. Repeating the same story on several websites adds no independent recurrence event; a capacity/width ratio calculated from the same specifications is not another independent observation.
 
 ## 6. A compact H / T / D / C / U for documentary forecasting
 
@@ -103,7 +105,7 @@ Useful reasons to revise a forecast include a better-matched historical preceden
 | --- | --- |
 | **H — forecast** | Name the candidate, proposed recurring decision, predicted part/cohort pattern and the date or historical interval being considered. Distinguish a still-unknown group boundary from a claimed favorable lot |
 | **T — minimum next step** | Identify the one source or part relationship that would most distinguish the proposed group from its ordinary alternative. One original source may settle a narrow premise; there is no universal source-count threshold and no purchase requirement |
-| **D — update rule** | Strengthen the forecast when a relevant shared mechanism or target relationship gains support; weaken it when the necessary relationship fails. PASS/FAIL can apply to a named premise. The forecast remains UNCERTAIN where the alternatives persist; that does not prevent publishing its comparative priority |
+| **D — update rule** | Apply PASS/FAIL to a named premise such as chronology or compatibility. Distinguish support for a manufacturing route from support that selects excess population over ordinary construction. If the constructions remain indistinguishable, the excess-memory assessment stays UNCERTAIN while the cohort and next source to investigate become more specific |
 | **C — alternatives** | A purpose-built lower-density product, planned common parts without excess, defective memory, ordinary resale, repaired assembly, or capacity-label/accounting differences |
 | **U — uncertainty** | Record source dependence, incomplete part catalogues, missing configuration dates, ambiguous group boundaries and repair history. No numerical combined uncertainty or probability is assigned without an applicable model |
 
@@ -113,14 +115,15 @@ Fix the cohort definition when it becomes supportable. If negative information c
 
 **Computer architecture** supplies the capacity, width and addressing constraints. **Packaging and reliability engineering** distinguishes original part population, post-bond selection and repair. **Industrial economics and manufacturing history** explain when common parts, substitution or reassignment could be attractive. **Causal inference** separates architecture chronology, manufacturing decisions, later reports and shared evidence. These roles support a predictive research programme even when the project owns no hardware.
 
-**Next question:** for the leading candidate, what original package or part relationship would turn a broad family precedent into a prediction about a specific manufacturing group?
+**Next question:** for one candidate, which part or configuration difference within the cohort suggested by its historical context would distinguish ordinary construction from hidden capacity?
 
 ### ERROR CHECK
 
-- Historical precedents are positive forecast inputs; direct hardware confirmation is not an entry requirement.
+- Historical precedents inform predictions about manufacturing routes and cohorts; direct hardware confirmation is not an entry requirement.
 - Architecture, production, observation/trial and publication dates remain separate.
 - The ASUS-hosted P104 statement is attributed to a user; the separate Gigabyte specification is not substituted for that user's board.
 - Manufacturing motives remain hypotheses unless separately sourced.
 - Known ordinary parts and arithmetic-only ordinary models receive different descriptions.
-- Forecast priority may change while physical-confirmation status remains unchanged.
+- Chronology, compatible parts and inventory form, and differences from the ordinary explanation are examined in sequence; manufacturing feasibility and evidence of excess capacity remain separate.
+- The v0.10 ranking withdrawal remains in force; general resemblance and documentary-work priority are not recast as an excess-memory ranking.
 - No favorable exact lot, recovery probability, new measurement, or universal cross-generation configuration method is asserted.

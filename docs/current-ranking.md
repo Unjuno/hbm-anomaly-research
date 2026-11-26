@@ -2,7 +2,13 @@
 
 [日本語](current-ranking.ja.md) · [Home](../README.md) · [Inference and proof](diagnostic-inference.md) · [Parts](../data/hbm_part_constraints.csv) · [CSV](../data/current_ranking.csv) · [Sources](sources.md)
 
-**v0.10.0 — 2026-11-26. Documentary research; no original hardware measurements.**
+**v0.11.0 — 2026-11-26. Documentary research; no original hardware measurements.**
+
+## Historical update in v0.11
+
+The new [historical investigation](historical-context.md) connects later A800 sales/allocation changes, the MI50 32 GB product addition and Vega-era supply-expansion plans to specific pathways. A30X's 2021 plan, PG199's official DRIVE role and ordinary pre-BC160 8 GB products also strengthen competing explanations. A CMP170HX post-import VBIOS performance update adds a concrete reason not to equate every performance difference with different physical parts [S94–S110].
+
+The 11-row [history assessment CSV](../data/history_assessments.csv) records dated anchors, mechanisms, predicted cohorts and excluded temporal explanations. The unified register's history and cohort fields are updated too. The diagnostic classes and physical/health/access statuses below remain unchanged: a more specific historical motive is not confirmation of extra memory in a target unit.
 
 ## 1. Withdraw the previous ordering
 

@@ -72,3 +72,8 @@ The performance/part axis uses capacity, width, effective rate and theoretical v
 A later same-card external comparison reports 1592 to 1599 GB/s at a 256 MB working set while compute performance changes substantially [S89]. This is consistent with selective restriction, but is not a capacity-only intervention or validation of all addresses. Do not import later outcomes into the historical forecast inputs.
 
 **ERROR CHECK:** Measured throughput, computed peaks and subsequent outcomes are labeled separately. Comparison dependence and missing test conditions are recorded. No new physical population, measurement, favorable lot, success probability, transaction series or X post.
+
+
+## v0.11 addition: performance also depends on configuration history
+
+A 2026 court record describes a later NVIDIA-provided VBIOS update improving mining performance on CMP170HX boards imported in 2021 [S94]. This is a concrete configuration confounder, not evidence that the 2023 review used that firmware or that the update changed HBM clocks. Keep the review's measurements intact; include configuration and operation above rated speeds among the uncertainties when comparing throughput with catalog parts. See [historical analysis](historical-context.md).

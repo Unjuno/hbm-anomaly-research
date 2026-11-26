@@ -1,15 +1,44 @@
 event_date,date_type,entity,observed_event,inference_limit,source_id
-2020-02-04,announcement,Samsung,16 GB HBM2E announcement,HBM2E density exists; allocation unknown,S23
+2017-07-18,announcement_and_production_mix_plan,Samsung,Announces expansion of 8 GB HBM2 for growing demand; expects more than half of HBM2 production to be 8 GB by H1 2018,Plan not achieved share; neither surplus nor AMD-specific allocation,S47
+2017-10-26,announcement_of_supply_plan,SK hynix,Plans to supply HBM2 in Q4 2017,Not proof of first-ever supply or particular Vega BOM,S100
+2018-03-27,product_announcement,NVIDIA,Announces V100 32 GB,Not CMP100 manufacture date or donor-package evidence,S111
+2018-10-24,earnings_publication,AMD,Reports negligible blockchain GPU sales and high graphics channel inventory with lower GPU ASP,Channel stock not HBM component surplus; predates MI50 announcement,S102
+2018-11-06,announcement_with_shipping_forecast,AMD,MI60 32 GB and MI50 16 GB announced; MI50 shipping expected by end Q1 2019,Expected shipment not actual; does not date MI50 32 GB,S103
+2019-10-15,publication_of_manufacturer_statement,AMD,Direct statement acknowledges creating MI50 32 GB for customer capacity and price preferences while continuing MI60 shipments,Public acknowledgment by this date; not first shipment or factory cutover; statement reproduced in press,S104
+2019-11-20,manufacturer_technical_publication,SK hynix,Describes deployed 4 GB and 8 GB HBM2 configurations,Period ordinary parts; no target qualification or exact density-speed bin assignment,S101
+2020-02-04,announcement,Samsung,16 GB HBM2E announcement; states continued 8 GB Aquabolt supply alongside new lineup,HBM2E density exists; allocation unknown; cannot infer immediate withdrawal of 8 GB parts,S23
+2020-06-15,availability_announcement,AMD,Announces Radeon Pro 5600M with 8 GB HBM2 in one GPU package,Ordinary RDNA-HBM route; does not establish BC160 pin or package compatibility,S105
 2020-07-02,announcement,SK hynix,HBM2E mass production announcement,No NVIDIA-specific stock or qualification evidence,S24
 2020-11-16,announcement,NVIDIA,A100 80 GB HBM2e announcement,No inference of A30 BOM compatibility,S25
+2020-12-01,platform_availability_announcement,AWS,Announces G4ad using Radeon Pro V520,Use AMD S51 for memory specifications; not evidence of BC160 reuse,S109
 2021-01-31,fiscal_period_end,NVIDIA,FY2021 Form 10-K long lead times and inventory mismatch risk,Corporate context only; period end not publication date,S21
 2021-02-19,announcement,NVIDIA,Japanese CMP mining product line announcement,Date of Japanese article; not US announcement or individual SKU manufacture date,S13
 2021-04-12,announcement,NVIDIA,A30 and A10 systems announcement,Not individual manufacture date,S26
+2021-08-01,fiscal_quarter_end,NVIDIA,Q2 FY2022 CMP revenue USD 266 million,Series revenue not per-unit price or SKU-specific sales; disclosed subsequently,S95
+2021-10-05,import_entry,Atlas Power / NVIDIA CMP170HX,First of four dated CMP170HX import entries in later court record,Import not manufacture; judgment published 2026-01-27,S94
+2021-10-31,fiscal_quarter_end,NVIDIA,Q3 FY2022 CMP revenue USD 105 million,Not per-unit price or a hardware-lot boundary,S95
+2021-11-01,import_entry,Atlas Power / NVIDIA CMP170HX,Second dated CMP170HX import entry,Not manufacture or VBIOS update date,S94
+2021-11-10,product_and_early_access_announcement,NVIDIA,Describes A30X integration and invites developer-kit early access,Not proof of production shipment or later module BOM,S97
+2021-11-12,import_entry,Atlas Power / NVIDIA CMP170HX,Third dated CMP170HX import entry,Not manufacture or VBIOS update date,S94
+2021-11-17,import_entry,Atlas Power / NVIDIA CMP170HX,Fourth dated CMP170HX import entry,Not manufacture or VBIOS update date,S94
 2022-01-30,fiscal_period_end,NVIDIA,FY2022 Form 10-K procurement at least 12 months ahead vs ~6 historically,Company-wide; no specific HBM shortage or surplus documented,S22
+2022-01-30,fiscal_quarter_end,NVIDIA,Q4 FY2022 CMP revenue USD 24 million,Revenue decline already predates Merge; not per-unit price or confirmed CMP stock,S95
+2022-06-08,mass_production_and_customer_evaluation_announcement,SK hynix,HBM3 production and completed NVIDIA sample evaluation announced; Q3 systems supply planned,Does not explain H100 64 GB HBM2e origin or compatibility,S106
 2022-09-15,protocol_event,Ethereum,Mainnet proof-of-stake Merge,Mining demand shock; no evidence of specific inventory reassignment,S27
+2022-10-30,fiscal_quarter_end,NVIDIA,USD 702 million inventory charge largely related to lower China Data Center demand; USD 354m on hand and USD 348m purchase obligations,Neither bucket identifies finished HBM packages; not HBM or board count,S96
+2022-11-18,sec_filing_date,NVIDIA,Describes A800 alternative offering in Q3 FY2023 filing,Do not backdate statement to period end or equate with later A800 40GB Active,S96
 2023-01-29,fiscal_period_end,NVIDIA,FY2023 Form 10-K supply-demand mismatch by platform,Company-wide; no specific BOM substitution documented,S29
+2023-02-03,software_document_last_update,NVIDIA,DRIVE TensorRT 8.5.10 surviving support table names PG199,Initial draft 2022-10-25 does not date every row; no HBM capacity or manufacture information,S98
+2023-03-13,software_document_last_update,NVIDIA,R525.85.12 surviving notes separately name Scout 64 GB HBM2e and 94 GB HBM2e,Driver release 2023-01-30 is not proven date of each current row; no common package proof,S110
 2023-07-20,earnings_call,TSMC,Management distinguished sufficient front-end support for AI demand from constrained advanced packaging especially CoWoS,Stage-specific supply context; no candidate-specific HBM substitution or package reassignment is established,S83
+2023-09-30,product_discontinuance_notice,Intel,PDN2302 announces discontinuance of listed 16 GB 8H Stratix 10 MX/NX products due to supplier HBM2 discontinuance,Total FPGA capacity; no replacement; not global HBM EOL or evidence about earlier GPUs,S107
+2023-11-02,local_channel_announcement,ELSA Japan,Announces handling of A800 40GB Active EQRA800-40GER,Shipping date and price separate inquiry; not global launch or manufacture,S99
+2024-03-31,announced_last_order_deadline,Intel,PDN2302 last-order date,Not end of all shipments or proof of full order fulfillment,S107
+2024-09-30,product_discontinuance_notice,Altera,PDN2412 announces discontinuance of listed 8 GB 4H Stratix 10 MX/NX and DX 2100 products due to supplier HBM2 discontinuance,Total FPGA capacity; no replacement; supply-specific not industry-wide,S108
+2025-03-31,announced_last_order_deadline,Altera,PDN2412 last-order date subject to supply,Not last production or shipment; announced last-shipment cutoff is 2029-03-31,S108
+2025-04,month_precision,AMD,April 2025 MI308-specific license requirement change,Date only month precision; not BOM change,S68
 2025-04-09,licensing_notice,NVIDIA,H20-specific licensing requirement notice,No GPU physical changes established,S65
 2025-04-27,fiscal_period_end,NVIDIA,H20 inventory and purchase obligation provision plus material reuse,Accounting amounts not part counts or destination SKUs,S65
 2025-07-27,fiscal_period_end,NVIDIA,Provision release on H20 sales outside China,Resale not evidence of changed HBM,S67
-2025-04,month_precision,AMD,April 2025 MI308-specific license requirement change,Date only month precision; not BOM change,S68
+2026-01-27,court_opinion_publication,US Court of International Trade,Publishes CMP170HX import and subsequent NVIDIA VBIOS-update history,Performance-update date unspecified; no physical hidden-HBM capacity finding,S94
+2029-03-31,announced_future_last_shipment,Intel / Altera,Both PDNs state last shipment date,Future announced cutoff as of research date; not an observed shipment or manufacturing date,S107;S108

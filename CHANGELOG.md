@@ -1,5 +1,14 @@
 # Changelog
 
+## v0.11.0 — 2026-11-26
+
+- Add bilingual historical analysis and 18 source entries, prioritizing manufacturer announcements, filings, technical documents and discontinuance notices; separately label an attributable AMD statement carried by a news article.
+- Make later GA100 reassignment motives, MI50 capacity-variant introduction and Vega supplier/production-plan comparison windows explicit. Include ordinary competing product histories for A30X, PG199 and BC-160.
+- Add an 11-row historical-assessment dataset and expand the event ledger to 43 entries with distinct date types. Update history, mechanism, cohort and source fields in the unified register; preserve all 26 entries, diagnostic classes and physical/health/access statuses.
+- Record CMP revenue contraction before the Merge and a documented 2021 import / subsequent VBIOS performance-update history. Neither is a price series or an independent hidden-capacity measurement.
+- Add customer-specific HBM2 discontinuance examples and correct the assumption that higher-density introduction necessarily removes lower-density supply. Distinguish loose-part substitution, completed-package reassignment and resale.
+- Remove stale v0.9 current-ranking language in background documents. Keep v0.10's withdrawal of similarity-based tiers; no invented probabilities, manufacturing dates, price trends or new hardware findings.
+
 ## v0.10.0 — 2026-11-26
 
 - Withdraw the similarity-based tiers for all 11 novel hypotheses; preserve old tiers in `v09_recurrence_tier` and retain all 26 reference/watch/hypothesis entries.

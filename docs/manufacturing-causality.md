@@ -1,8 +1,8 @@
-# Manufacturing constraints and candidate predictions — v0.8.0
+# Manufacturing constraints and candidate predictions — v0.11.0
 
-[日本語](manufacturing-causality.ja.md) · [Current ranking](current-ranking.md) · [Inference refinement](inference-refinement.md) · [Lot history](lot-history.md) · [Capacity constraints](capacity-constraints.md) · [Sources](sources.md)
+[日本語](manufacturing-causality.ja.md) · [Current ranking](current-ranking.md) · [Historical context](historical-context.md) · [Inference refinement](inference-refinement.md) · [Lot history](lot-history.md) · [Capacity constraints](capacity-constraints.md) · [Sources](sources.md)
 
-**2026-11-26 JST. v0.8 background, with v0.9 ranking guidance. Theoretical desk review; no new hardware measurements.** This document turns the supply-substitution hypothesis into narrower predictions. **Facts** are attributed to sources; **deductions** follow from stated premises; **hypotheses** describe unverified manufacturing pathways. The original v0.8 analysis kept the then-current tiers unchanged. The [v0.9 recurrence analysis](recurrence-hypotheses.md) now uses historical parallels and cohort predictions to revise forecast priority, while physical-evidence statuses remain separate.
+**2026-11-26 JST. v0.11 connects primary supply, qualification and discontinuance records to manufacturing stages and dates. Theoretical desk review; no new hardware measurements.** This document turns the supply-substitution hypothesis into narrower predictions. **Facts** are attributed to sources; **deductions** follow from stated premises; **hypotheses** describe unverified manufacturing pathways. The similarity-led v0.9 ranks withdrawn in v0.10 are not reinstated. Historical records narrow the conditions and production groups worth comparing; differences from ordinary construction and physical-evidence statuses are evaluated separately. See the [recurrence hypotheses](recurrence-hypotheses.md) for the revision history and [historical context](historical-context.md) for the new chronology.
 
 ## 1. Identify the constraint that the substitution would relieve
 
@@ -97,7 +97,7 @@ These are **bounded research predictions**. They specify useful next facts witho
 | CMP 100-200 | Establish the exact memory interface and package before treating bandwidth/capacity as anomalous | Existing specification uncertainty cannot count as a measured anomaly [S02,S05,S15] |
 | Max 1100 reference | What, if anything, separately identifies the disabled stack's density and health? | Its documented physical extra component remains a reference, not a demonstration of healthy configurable surplus [S39] |
 
-**Current rank rule:** historical recurrence, part/package lineage, applicable manufacturing chronology and the feasibility of ordinary alternatives can change a candidate's forecast tier without new hardware measurements. State which relationship or comparison criterion changed, and keep physical, healthy-excess and access statuses separate. A generic shortage is not candidate-specific evidence by itself; do not convert unresolved-premise counts into recovery probabilities. The [current ranking](current-ranking.md) discloses the v0.8-to-v0.9 criterion change and retains the former tiers in the data.
+**v0.11 rank rule:** applicable part, qualification and manufacturing-date records can narrow a hypothesis without the project owning hardware. A shared generation, package family or generic shortage does not by itself raise a rank. State which candidate-specific relationship the new record changes and how it distinguishes the proposed construction from the simplest ordinary one. If it cannot discriminate, retain the conditional research hypothesis and its unranked status. Keep physical, healthy-excess and access statuses separate; do not convert unresolved-premise counts into recovery probabilities. The [current ranking](current-ranking.md) records the current treatment, while old ranks remain historical.
 
 ## 6. Count observations, not URLs
 
@@ -123,7 +123,7 @@ This is a documentary decision framework, not a hardware gate before publishing 
 | **C — competing explanations** | Normal density, planned product segmentation, defective paths, fixed disablement, a different SKU, post-sale rework, ordinary resale, metadata/reservation, or unrelated revision changes. |
 | **U — uncertainty** | Record part identification, date interpretation, missing configuration history, qualification scope, repair provenance and source dependence qualitatively. These are structural gaps, not supplied measurement-error distributions. No combined numerical uncertainty or coverage factor is fabricated. |
 
-**A useful next question:** which missing documented fact would distinguish the top candidate's proposed construction from its cheapest ordinary explanation? Answering that question narrows the research without requiring the project to own hardware.
+**A useful next question:** which missing documented fact would distinguish the investigated candidate's proposed construction from its simplest ordinary explanation? Answering that question narrows the research without requiring the project to own hardware.
 
 ## 8. Cross-disciplinary use and ERROR CHECK
 
@@ -135,5 +135,20 @@ This is a documentary decision framework, not a hardware gate before publishing 
 - The TSMC statement establishes stage-specific supply context, not a GPU population fact.
 - Model predictions remain conditional on compatibility, availability and decision timing.
 - Physical presence, health, configurability and reliable use remain separate.
-- The original v0.8 tiers are preserved historically; v0.9 updates forecast tiers using an explicitly changed criterion, without claiming new population evidence.
+- Old ranks are historical. v0.11 does not reinstate the similarity-led ranks withdrawn in v0.10 or confuse narrower historical pathways with new population evidence.
 - No new mathematical model or numeric uncertainty is introduced; the existing economic model retains its own assumptions and units.
+
+## 9. Read historical constraints by manufacturing stage and customer
+
+The following published facts narrow possible substitution pathways. Applying them to another customer, product or period requires a separate documented connection.
+
+| Published event | Meaning and scope for a manufacturing hypothesis |
+| --- | --- |
+| **2020-02-04:** Samsung introduced 16 GB-per-stack Flashbolt with a plan to continue supplying 8 GB Aquabolt while expanding the new offering [S92] | A denser introduction does not establish disappearance of the older density. The statement does not establish sufficient volume or delivery timing for a particular customer |
+| **2022-06-08:** SK hynix announced HBM3 mass production and completion of NVIDIA's sample performance evaluation, with supply for NVIDIA systems expected to start shipping in Q3 of that year [S106] | This distinguishes a standards-level candidate from a part evaluated by the target customer. The announcement does not give the exact evaluation-completion date or establish qualification for a different SKU |
+| **2023-07-20:** TSMC distinguished adequate AI front-end support from tight back-end capacity, particularly CoWoS [S83] | Completed-package reassignment could bypass a constrained stage; choosing denser loose HBM alone does not eliminate assembly. This record cannot retrospectively establish the constraint affecting CMP in 2021 |
+| **2023-09-30 / 2024-09-30:** Intel/Altera announced discontinuance of 16 GB / 8H Stratix 10 products and then 8 GB / 4H products because their vendor was ending HBM2 supply [S107,S108] | **16 GB / 8 GB are each FPGA product's total memory capacities, not per-stack capacities.** The first notice covers MX/NX; the second covers MX/NX and the DX 2100 product line. Both offer last-time orders and state that no replacement devices are available. Their order does not establish the discontinuance sequence for the whole HBM market |
+
+**Deduction:** do not assume that lower densities necessarily disappear first and force substitution with higher densities. In the cited customer-specific example, the 16 GB notice preceded the 8 GB notice; last-time orders and product discontinuance were actual responses to supply withdrawal [S107,S108]. A **conditional hypothesis** remains for reassigning an already assembled package that is compatible with the intended use and permits the required configuration: it may be usable without repeating the constrained stage. Separate loose-HBM substitution, completed-package reassignment and ordinary resale, and identify which constraint each route would relieve.
+
+See [historical context](historical-context.md) for candidate-specific chronology and competing explanations of price changes. These events alone do not establish a particular GPU's hidden capacity or its recovery rank.
