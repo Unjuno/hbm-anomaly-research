@@ -112,7 +112,7 @@ All larger capacities are **hypothetical total physical data capacities**. They 
 | --- | --- | --- |
 | CMP 170HX | Community synthesis reports selected 8-to-64 GB-class and 10-to-40 GB-class cases, plus 32 GB exceptions for some identities [S03,S16]. | Existence example for capacity restrictions. Variant differences prevent a universal product claim; these are external reports. |
 | CMP 100-100 | The owner reports two 6144-to-12288 MiB enumerations and two 11264 MiB checker logs with zero reported failures; reserved coverage, device association and stack details have limits [S04a]. | A precedent in another CMP architecture, with explicitly limited evidence coverage. |
-| P104-100 | Historical owner accounts describe 4-to-8 GB GDDR outcomes and failures [S17]. | Product-segmentation analogy only, outside the HBM scope. |
+| P104-100 | Historical owner accounts describe 4-to-8 GB GDDR5X outcomes and failures [S17]. | Product-segmentation analogy only, outside the HBM scope. |
 
 Known results informed these hypotheses. They are not an independent blinded validation of the ranking or the numerical screening heuristic.
 

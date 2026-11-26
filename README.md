@@ -1,28 +1,40 @@
 # HBM Anomaly Research
 
-**Which accelerators might contain more HBM than their advertised capacity? A public, explicitly speculative comparison of hardware, product history and production cohorts.**
+**Forecasting where earlier capacity restrictions and shared-part manufacturing decisions may recur across accelerator generations and production cohorts.**
 
-[日本語](README.ja.md) · [Current ranking](docs/current-ranking.md) · [Capacity constraints](docs/capacity-constraints.md) · [Manufacturing causes](docs/manufacturing-causality.md) · [Sources](docs/sources.md)
+[日本語](README.ja.md) · [Current ranking](docs/current-ranking.md) · [Recurrence hypotheses](docs/recurrence-hypotheses.md) · [Capacity constraints](docs/capacity-constraints.md) · [Sources](docs/sources.md)
 
-**v0.8.0 — 2026-11-26. Desk research; no original hardware measurements.** We explain what looks suspicious, the physical construction required, the ordinary alternative, and the information that would change the prediction. Physical population, healthy capacity and usable capacity are evaluated separately.
+**v0.9.0 — 2026-11-26. Documentary forecasts; no original hardware measurements.** Precedents are positive inputs to candidate selection. Shared product purposes, part lineages and manufacturing incentives identify cohorts where similar decisions may have recurred. Forecast ranks and confirmed population, health or access remain separate fields.
 
-This edition identifies **which explanations fail and which conditions the remaining explanations require**. We derive a conditional stack-count lower bound from active width and separate inactive-channel capacity from unexposed capacity inside active channels under stated density assumptions. The rank tiers stay unchanged; the next documentary questions become more specific.
+## What we predict from precedents
 
-## Current shortlist
+A P104-100 owner described 8 GB installed with half disabled in 2018 [S84]. Pascal-based CMP 100-100 also has a later capacity-change report [S04a,S86]. The RX 480 retail experiment [S54] and CMP 170HX external research [S19] provide further references. **Recurrence of manufacturing and product-configuration decisions is a starting hypothesis for this research.** Architecture dates, board manufacturing dates and report dates are separate in the [precedent ledger](data/capacity_precedents.csv).
 
-Ranks are **tied qualitative tiers of the specificity of a physical-excess hypothesis**. They are not recovery probabilities. All 11 new predictions remain unconfirmed; even the first tier is weak.
+| Decision predicted to recur | Expected cohort pattern |
+| --- | --- |
+| Common parts with capacity set by product segment | Capacity settings cluster within compatible package/part lineages; recurrence need not be limited to a short shortage window |
+| Temporary substitution of denser parts or completed packages | Part or revision groups differ physically while retaining the same advertised capacity |
+| Grading already assembled packages into lower products | Shared assembly lineages differ in enabled regions or product grade |
 
-| Rank tier / category | Candidates | Why they belong here |
+These are forecasts, not established internal decisions by each manufacturer. Shared purpose, parts and applicable manufacturing conditions make the transfer from a precedent more concrete.
+
+## Current forecast ranking
+
+Tiers compare **how closely historical precedents support recurrence of capacity restriction or assembly substitution**. Candidates within a tier are tied. All 11 novel physical-population claims remain unconfirmed, while historical and mechanism evidence can still change their forecast ordering. Tiers are not recovery success rates or prevalence estimates.
+
+| Tier / category | Candidates | Forecast rationale |
 | --- | --- | --- |
-| **1 — leading hypotheses, tied** | **H100 SXM5 64 GB HBM2e; CMP 100-200 (~6 GB)** | A specific same-family 64/94 GB HBM2e comparison; or a low-capacity mining configuration and external CMP capacity-control analogies. |
-| **2 — weak package/density hypotheses, tied** | A30; PG199 / DRIVE A100; **AMD MI50 16 GB**; A800 40 GB Active; H100 SXM5 80 GB | Concrete population/density questions, but ordinary constructions already explain the nominal capacities. |
-| **3 — additional assumptions, tied** | AMD RX Vega 56/64 8 GB; CMP 100-210; AMD/XFX BC-160; A30X | Further compatibility, transfer or topology assumptions are required; some apparent clues concern performance rather than capacity. |
-| **Documented physical reference** | **Intel GPU Max 1100** | Four HBM stacks physically present, three enabled 16 GB stacks; one permanently disabled. The fourth density and health remain unestablished [S39]. |
-| **Watchlist** | H20A/H20; AMD MI308/MI308X; B200/B300 capacity labels; GB300 Desktop; Intel Max 1350; Ascend 910B4 | Supply events, SKU/accounting discrepancies or missing topology need to be linked to an actual physical variant before promotion. |
+| **1 — leading recurrence forecast** | **CMP 100-200 (~6 GB)** | External capacity-control reports exist on both the Pascal and Ampere sides of the same mining-oriented CMP line; recurrence in a Volta cohort is the closest product-purpose analogy |
+| **2 — traceable product/part lineages, tied** | **A30; PG199 / DRIVE A100; A800 40 GB Active; CMP 100-210; AMD MI50 16 GB; H100 SXM5 64 GB HBM2e** | Shared architecture, product purpose or same-family capacity variants motivate concrete package/revision cohort predictions |
+| **3 — additional transfer assumptions, tied** | H100 SXM5 80 GB; AMD RX Vega 56/64 8 GB; AMD/XFX BC-160; A30X | A different exclusion mechanism, distinct package, or unestablished high-density compatibility makes transfer from the precedents more indirect |
+| **Documented physical reference** | **Intel GPU Max 1100** | Vendor documents four physical HBM stacks, three enabled 16 GB stacks and one permanently disabled; remaining density/health uncertainties are retained [S39] |
+| **Watchlist** | H20A/H20; AMD MI308/MI308X; B200/B300; GB300 Desktop; Intel Max 1350; Ascend 910B4 | Link supply context, specification discrepancies and population evidence to a specific production pathway |
 
-**[Read the complete current ranking, conditional capacities, counterarguments and rank-change conditions →](docs/current-ranking.md)**
+**[Read candidate-specific cohort predictions, competing explanations and rank-change conditions →](docs/current-ranking.md)**
 
-Intel's documented disabled stack does not make it the best recovery prospect. A 64 GB physical total assumes that its fourth stack is also 16 GB. External CMP 170HX/CMP 100-100 reports and the historical AMD RX 480 GDDR5 case are separate references, not discoveries by this project. We make no current-inventory or price-rise claim. All source IDs are in the [source register](docs/sources.md).
+v0.9 makes recurrence forecasting the main lens, replacing v0.8's physical-hypothesis specificity ordering. H100 64 GB moves 1→2, CMP 100-210 moves 3→2 and H100 80 GB moves 2→3. Prior values remain in CSV `v08_specificity_tier`. These are explicit judgment changes about historical transfer, not new capacity-recovery findings.
+
+**Ordinary explanations have evidence levels too.** Identified target parts, documented family configurations and arithmetic-only constructions are different. A hypothetical low-density part does not erase a forecast merely because its capacity fits: rate, compatibility and period availability must also fit. Unseen ordinary constructions remain possible; an incomplete part search does not establish that they do not exist.
 
 ## Help narrow one hypothesis
 
@@ -54,7 +66,8 @@ The densities above are **assumptions in construction models**, not identified p
 
 | Read | Purpose |
 | --- | --- |
-| [Current ranking](docs/current-ranking.md) / [CSV](data/current_ranking.csv) | One current comparison: 11 predictions plus references and watches; 25 entries |
+| [Current ranking](docs/current-ranking.md) / [CSV](data/current_ranking.csv) | One current comparison: 11 predictions plus references and watches; 26 entries |
+| [Recurrence hypotheses](docs/recurrence-hypotheses.md) / [Precedent ledger](data/capacity_precedents.csv) | Historical cases, reusable decisions and cohort-specific forecasts |
 | [Capacity constraints](docs/capacity-constraints.md) | Variable tables, conditional proofs, rejected construction models and candidate-specific implications |
 | [Manufacturing causes](docs/manufacturing-causality.md) | Bottleneck location, irreversible decisions, defect grading versus commercial restrictions |
 | [v0.7 deductions](docs/inference-refinement.md) | Background on address-space versus disabled-stack mechanisms and evidence |

@@ -2,7 +2,7 @@
 
 [日本語](manufacturing-causality.ja.md) · [Current ranking](current-ranking.md) · [Inference refinement](inference-refinement.md) · [Lot history](lot-history.md) · [Capacity constraints](capacity-constraints.md) · [Sources](sources.md)
 
-**2026-11-26 JST. Theoretical desk review; no new hardware measurements.** This document turns the supply-substitution hypothesis into narrower predictions. **Facts** are attributed to sources; **deductions** follow from stated premises; **hypotheses** describe unverified manufacturing pathways. Existing ranking tiers remain unchanged: the analysis improves discrimination without adding candidate-specific population evidence.
+**2026-11-26 JST. v0.8 background, with v0.9 ranking guidance. Theoretical desk review; no new hardware measurements.** This document turns the supply-substitution hypothesis into narrower predictions. **Facts** are attributed to sources; **deductions** follow from stated premises; **hypotheses** describe unverified manufacturing pathways. The original v0.8 analysis kept the then-current tiers unchanged. The [v0.9 recurrence analysis](recurrence-hypotheses.md) now uses historical parallels and cohort predictions to revise forecast priority, while physical-evidence statuses remain separate.
 
 ## 1. Identify the constraint that the substitution would relieve
 
@@ -86,7 +86,7 @@ The [capacity-constraint analysis](capacity-constraints.md) provides the interfa
 
 These are **bounded research predictions**. They specify useful next facts without claiming that a particular favorable lot exists.
 
-| Candidate group | More specific prediction/question | Why the present tier does not change |
+| Candidate group | More specific prediction/question | Information gap identified in v0.8 |
 | --- | --- | --- |
 | MI50 16 GB / documented 32 GB sibling | Does an identified original 16 GB group use the ordinary lower-density population or a restricted higher-density population? Density-specific part and qualification records discriminate | Official 16/32 GB specifications establish normal alternatives, not higher density inside a 16 GB unit [S38,S80] |
 | H100 SXM5 64 GB HBM2e | Does an identified package include more ordinary-data memory than the minimal construction explaining 64 GB? Search for actual population, not another support-list entry | The named 64/94 GB variants sharpen comparison, but do not establish extra populated stacks in the 64 GB variant [S60,S64] |
@@ -97,7 +97,7 @@ These are **bounded research predictions**. They specify useful next facts witho
 | CMP 100-200 | Establish the exact memory interface and package before treating bandwidth/capacity as anomalous | Existing specification uncertainty cannot count as a measured anomaly [S02,S05,S15] |
 | Max 1100 reference | What, if anything, separately identifies the disabled stack's density and health? | Its documented physical extra component remains a reference, not a demonstration of healthy configurable surplus [S39] |
 
-**Rank rule:** retain the existing qualitative tiers until new information changes a candidate-specific necessary premise or distinguishes a surviving construction. Do not award generic shortage points. Do not turn the number of unresolved premises into a numerical recovery probability. This analysis can change which document is worth finding next before it changes a ranking.
+**Current rank rule:** historical recurrence, part/package lineage, applicable manufacturing chronology and the feasibility of ordinary alternatives can change a candidate's forecast tier without new hardware measurements. State which relationship or comparison criterion changed, and keep physical, healthy-excess and access statuses separate. A generic shortage is not candidate-specific evidence by itself; do not convert unresolved-premise counts into recovery probabilities. The [current ranking](current-ranking.md) discloses the v0.8-to-v0.9 criterion change and retains the former tiers in the data.
 
 ## 6. Count observations, not URLs
 
@@ -135,5 +135,5 @@ This is a documentary decision framework, not a hardware gate before publishing 
 - The TSMC statement establishes stage-specific supply context, not a GPU population fact.
 - Model predictions remain conditional on compatibility, availability and decision timing.
 - Physical presence, health, configurability and reliable use remain separate.
-- Existing ranking tiers are unchanged; the next discriminating evidence is made more specific.
+- The original v0.8 tiers are preserved historically; v0.9 updates forecast tiers using an explicitly changed criterion, without claiming new population evidence.
 - No new mathematical model or numeric uncertainty is introduced; the existing economic model retains its own assumptions and units.

@@ -6,7 +6,7 @@ The main contribution is a better supported prediction: one original source, ord
 
 Use **Quick evidence / counterexample** for a short first report. Give the target, what you actually observed, its source/provenance, and which claim it supports or challenges. Unknown fields may stay unknown. The detailed **New candidate / prediction / source correction** template is available for fuller proposals.
 
-Keep facts, deductions and hypotheses separate. Conditional capacity belongs in hypothesis fields, never in measured-capacity fields. Source IDs support the inputs rather than the forecast. Rank tiers in `data/current_ranking.csv` are comparative judgments about physical-hypothesis specificity, not recovery probabilities. State the changed premise before revising a tier.
+Keep facts, deductions and hypotheses separate. Conditional capacity belongs in hypothesis fields, never in measured-capacity fields. Source IDs support the inputs rather than the forecast. Rank tiers in `data/current_ranking.csv` are comparative historical-recurrence forecasts, not recovery probabilities. The earlier v0.8 specificity tier is retained in `v08_specificity_tier`. A closer precedent, original part/package relationship, manufacturing chronology or stronger ordinary explanation can change the forecast without an owner experiment. State the changed premise and scope before revising a tier; keep measured-status fields separate. See [recurrence hypotheses](docs/recurrence-hypotheses.md).
 
 ## Existing owners
 

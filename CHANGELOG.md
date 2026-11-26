@@ -1,5 +1,15 @@
 # Changelog
 
+## 0.9.0 — 2026-11-26
+
+Makes historical recurrence the explicit forecast criterion. Adds bilingual recurrence analysis with three proposed mechanisms—persistent product segmentation, temporary compatible substitution and post-assembly grading—and candidate-specific cohort patterns. Separates completed-package reassignment from loose-component substitution. Distinguishes an arithmetic ordinary construction from catalog feasibility, a documented family comparator and target-applicable population evidence.
+
+Preserves the former v0.8 specificity tier in `v08_specificity_tier` and adds six forecast fields. CMP 100-200 becomes the sole tier-1 prediction; H100 SXM5 64 GB moves from 1 to 2, CMP 100-210 from 3 to 2, and H100 SXM5 80 GB from 2 to 3. These are disclosed changes of comparison criterion and historical reasoning, not newly measured capacity results. The 11 predictions form tiers of 1/6/4 and retain unestablished physical, healthy-excess and access statuses.
+
+Adds P104 as a non-HBM reference (26 total register entries), three source-register entries and a four-case capacity-precedent ledger. Keeps architecture/product dates, unknown board manufacture dates, publication/experiment dates and review dates separate. The 2018 ASUS-hosted P104 post remains an attributed owner claim; the Gigabyte specification is a separate product baseline. GP100's 2016 architecture date does not date CMP 100-100 manufacture or its owner's 2026 experiment.
+
+Updates both landing pages, both current rankings, the data dictionary and contribution guidance. Historical and documentary inputs may now revise a forecast without a hardware gate. No favorable physical lot, new hardware test, measured prevalence, calibrated recovery probability, verified price trend or X publication is claimed.
+
 ## 0.8.0 — 2026-11-26
 
 Adds bilingual conditional capacity constraints with complete variable tables, unit checks and proofs. Separates inactive-partition capacity, unexposed active-partition capacity and reporting-only deductions; derives a stack-count lower bound from a verified active width and per-stack maximum. Shows how known density would exclude particular mechanisms, with A30, MI50, A800, Vega, CMP and H100 countermodels. H100 NVL becomes a geometry reference: its 6016-lane specification rejects whole-stack-only activation under the stated 1024-lane model without proving a 96 GB physical total. A30's native-ECC statement rejects a specific 32-to-24 GB accounting explanation, not runtime reservations generally.

@@ -2,7 +2,7 @@
 
 [Home](../README.md) · [Sources](sources.md) · [Capacity constraints](capacity-constraints.md) · [Manufacturing causality](manufacturing-causality.md) · [Validation protocol](validation.md)
 
-This physical model supports the [current hypothesis ranking](current-ranking.md). Its descriptive ratios do not compute that order; the [current ranking](current-ranking.md) also weighs product-specific mechanisms, ordinary explanations and explicit assumptions.
+This physical model supports the [current hypothesis ranking](current-ranking.md). Its descriptive ratios do not compute that order. The v0.9 [historical-recurrence forecast](recurrence-hypotheses.md) also weighs repeated productization decisions, part/package lineage, manufacturing context and the strength of ordinary explanations. Those inputs can change a forecast before physical population is established.
 
 The [v0.7 refinements](inference-refinement.md) add concrete address-density versus disabled-stack mechanisms, manufacturing-stage constraints and publication-feedback rules without changing this model.
 
