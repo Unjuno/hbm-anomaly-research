@@ -2,7 +2,7 @@
 
 [Home](../README.md)
 
-S01–S38 initially accessed 2026-11-25; S39–S86 accessed 2026-11-26 unless noted. Key physical/theory sources were rechecked for v0.7.0 and v0.8.0; historical capacity-control sources were rechecked for v0.9.0 on 2026-11-26. Links can change; distinguish manufacturer claims, owner measurements and community synthesis. This repository has not reproduced any hardware result. No third-party firmware, photographs, code or full-text document is redistributed.
+S01–S38 initially accessed 2026-11-25; S39–S89 accessed 2026-11-26 unless noted. Key physical/theory sources were rechecked for v0.7.0 and v0.8.0; historical capacity-control sources were rechecked for v0.9.0 on 2026-11-26. Links can change; distinguish manufacturer claims, owner measurements and community synthesis. This repository has not reproduced any hardware result. No third-party firmware, photographs, code or full-text document is redistributed.
 
 | ID | Source / locator | Type and relevant evidence |
 | --- | --- | --- |
@@ -94,6 +94,10 @@ S01–S38 initially accessed 2026-11-25; S39–S86 accessed 2026-11-26 unless no
 | S85 | [GIGABYTE P104-100 4G, GV-NP104D5X-4G, specifications](https://www.gigabyte.com/Graphics-Card/GV-NP104D5X-4G/sp) | Manufacturer baseline: 4 GB GDDR5X, 256-bit. This is a different vendor's named board; it must not be used as part-population evidence for the ASUS owner unit in S84. |
 | S86 | [NVIDIA, Inside Pascal: NVIDIA's Newest Computing Platform, article dated April 5 2016](https://developer.nvidia.com/blog/inside-pascal/) | Manufacturer-authored GP100/P100 architecture-era anchor. Read the authored body, not the later AI-generated summary. The article also has later PCIe-family additions; its original date does not date every configuration in the current text, any CMP 100-100 board, or a later capacity-change report. |
 
-S60–S86 accessed 2026-11-26. S06 and S72 were rechecked for the v0.8.0 constraints. A30 PB-10418-001_v03 p.1 explicitly states native HBM2 ECC has no memory-capacity or bandwidth overhead; this is SKU-specific and does not assert zero runtime reservations.
+| S87 | [Niconiconi, CMP 170HX review, Oct 25 2023](https://niconiconi.neocities.org/tech-notes/nvidia-cmp-170hx-review/); [archived Oct 29 2023](https://archive.md/8dRxK) | First-person period review, original and archived text. Stock 8 GB-class, CUDA query 7961 MB, 4096-bit, theoretical 1492.99 GB/s; measured clpeak 1165.79–1355.40 GB/s, FP32 FMA 394.77 GFLOPS and separate non-FMA variant 6252.80–6294.30 GFLOPS. Reported CUDA version 12.20, GPU clock 1410 MHz, memory clock 729 MHz; per-run batch/clock/temperature not established. Capacity recovery not demonstrated in this article. |
+| S88 | [Tom's Hardware, CMP170HX in the wild, September 2021](https://www.tomshardware.com/news/nvidias-cmp170hx-in-the-wild-with-164-mhps-ethereum-mining-performance) | Contemporary secondary source for 8 GB, 4096-bit and 1493 GB/s peak. Its claimed two-stack population does not explain a 4096-lane interface at ordinary 1024 lanes per stack; do not use it as population evidence. |
+| S89 | [Consensus-Protocol/cmp170hx, performance notes](https://github.com/Consensus-Protocol/cmp170hx/blob/main/docs/operations/performance.md) | Later external synthesis includes same-card 256 MB bandwidth comparison of 1592 to 1599 GB/s, with compute changes; not a capacity-only experiment or independent full-memory validation. Explicitly distinguishes tool-derived peaks from measurements; methodology varies. |
+
+S60–S89 accessed 2026-11-26. S06 and S72 were rechecked for the v0.8.0 constraints. A30 PB-10418-001_v03 p.1 explicitly states native HBM2 ECC has no memory-capacity or bandwidth overhead; this is SKU-specific and does not assert zero runtime reservations.
 
 Source corrections and negative evidence are welcome. Where a page discusses a security vulnerability, its link is provided solely as provenance for observations; this project does not reproduce operational details. For publication, pin immutable revisions or timestamped records where licensing and privacy permit.

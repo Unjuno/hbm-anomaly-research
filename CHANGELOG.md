@@ -1,5 +1,9 @@
 # Changelog
 
+## 0.9.1 — 2026-11-26
+
+Restores performance/part mismatch as a complementary forecast axis, anchored by the October 2023 archived 170HX review. Separates measured clpeak bandwidth and FMA/non-FMA from device-query theoretical peaks; adds a bilingual analysis, exact provenance ledger, and capacity-normalized comparisons of A30X/MI50/A30 with ordinary alternatives. No invented test conditions, new hardware result, or price adjustment. Historical v0.9 recurrence tiers unchanged; no X publication.
+
 ## 0.9.0 — 2026-11-26
 
 Makes historical recurrence the explicit forecast criterion. Adds bilingual recurrence analysis with three proposed mechanisms—persistent product segmentation, temporary compatible substitution and post-assembly grading—and candidate-specific cohort patterns. Separates completed-package reassignment from loose-component substitution. Distinguishes an arithmetic ordinary construction from catalog feasibility, a documented family comparator and target-applicable population evidence.

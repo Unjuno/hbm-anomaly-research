@@ -2,7 +2,9 @@
 
 [English](current-ranking.md) · [トップ](../README.ja.md) · [再発予想](recurrence-hypotheses.ja.md) · [容量・幅の制約](capacity-constraints.ja.md) · [製造原因](manufacturing-causality.ja.md) · [出典](sources.md) · [CSV](../data/current_ranking.csv)
 
-**v0.9.0 — 2026-11-26。公開資料による考察であり、独自の実機測定はありません。**
+**v0.9.1 — 2026-11-26。公開資料による考察であり、独自の実機測定はありません。**
+
+**v0.9.1の補足：** [性能の不整合](performance-gap.ja.md)で2023年の170HXの実測・仕様と、既存候補の比較を追加した。歴史的再発と性能不整合を別々の評価軸として扱う。以下の再発順位は維持し、実測なしの確率・合算点数は作らない。
 
 ## 1. 何を予想して順位を付けるか
 

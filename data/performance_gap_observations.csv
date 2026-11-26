@@ -1,0 +1,16 @@
+id,date,date_type,product,capacity_label,metric,kind,value_min,value_max,unit,conditions,source_ids
+170hx-stock-width,2023-10-25,publication,CMP 170HX 8GB,8 GB,active_bus_width,device_report,4096,4096,lanes,CUDA query; actual topology not identified,S87
+170hx-stock-total,2023-10-25,publication,CMP 170HX 8GB,8 GB,total_global_mem,device_report,7961,7961,MB_source_notation,CUDA query; not exact physical population,S87
+170hx-stock-peak,2023-10-25,publication,CMP 170HX 8GB,8 GB,bandwidth,theoretical_tool,1492.99,1492.99,GB/s,reported GPU clock 1410 MHz and memory clock 729 MHz; not measured,S87
+170hx-stock-clpeak,2023-10-25,publication,CMP 170HX 8GB,8 GB,bandwidth,measured_external,1165.79,1355.40,GB/s,clpeak vector widths float to float16; driver query 12.20; per-run working set and load clock unknown,S87
+170hx-stock-fma,2023-10-25,publication,CMP 170HX 8GB,8 GB,fp32_fma,measured_external,394.77,394.77,GFLOPS,standard clpeak; batch and load clock unknown,S87
+170hx-stock-nofma,2023-10-25,publication,CMP 170HX 8GB,8 GB,fp32_no_fma,measured_external,6252.80,6294.30,GFLOPS,modified clpeak different instruction mix; batch and load clock unknown,S87
+a100-40,2021-06,document_date,A100 40 GB,40 GB,bandwidth,vendor_peak,1555,1555,GB/s,PCIe and SXM 40 GB; not measured,S09
+a100-80-sxm,2021-06,document_date,A100 80 GB SXM,80 GB,bandwidth,vendor_peak,2039,2039,GB/s,SXM 80 GB; not measured,S09
+a30,2022-03,document_date,A30,24 GB,bandwidth,vendor_peak,933,933,GB/s,product brief; not measured,S06
+a30x,2023-05,document_date,A30X,24 GB,bandwidth,vendor_peak,1223,1223,GB/s,HBM2e; active width unverified; not measured,S10
+a100x,2023-05,document_date,A100X,80 GB,bandwidth,vendor_peak,2039,2039,GB/s,HBM2e; not measured,S10
+mi50-16,2026-11-26,review_date,MI50 16 GB,16 GB,bandwidth,vendor_peak,1000,1000,GB/s,official 1 TB/s label; 4096-bit; not measured,S38
+mi50-32,2026-11-26,review_date,MI50 32 GB,32 GB,bandwidth,vendor_peak,1000,1000,GB/s,official 1 TB/s label; 4096-bit; not measured,S80
+170hx-later-before,2026-11-26,review_date,CMP 170HX variant not specified,,bandwidth,measured_external,1592,1592,GB/s,same-card stock/modded comparison 256 MB working set; experiment date unknown,S89
+170hx-later-after,2026-11-26,review_date,CMP 170HX variant not specified,,bandwidth,measured_external,1599,1599,GB/s,same-card stock/modded comparison 256 MB working set; not capacity-only intervention,S89

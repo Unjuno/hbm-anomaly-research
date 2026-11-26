@@ -2,7 +2,9 @@
 
 [日本語](current-ranking.ja.md) · [Home](../README.md) · [Recurrence forecasts](recurrence-hypotheses.md) · [Capacity constraints](capacity-constraints.md) · [Manufacturing causes](manufacturing-causality.md) · [Sources](sources.md) · [CSV](../data/current_ranking.csv)
 
-**v0.9.0 — 2026-11-26. Desk research; no original hardware measurements.**
+**v0.9.1 — 2026-11-26. Desk research; no original hardware measurements.**
+
+**Complementary v0.9.1 screen:** [performance gaps](performance-gap.md) restores the historical 2023 170HX bandwidth/compute observations and compares existing candidates. The recurrence tiers below are unchanged; performance anomalies and historical recurrence are separate evaluation axes, not a numerical probability.
 
 ## 1. What the forecast ranks
 

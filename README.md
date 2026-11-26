@@ -4,7 +4,11 @@
 
 [日本語](README.ja.md) · [Current ranking](docs/current-ranking.md) · [Recurrence hypotheses](docs/recurrence-hypotheses.md) · [Capacity constraints](docs/capacity-constraints.md) · [Sources](docs/sources.md)
 
-**v0.9.0 — 2026-11-26. Documentary forecasts; no original hardware measurements.** Precedents are positive inputs to candidate selection. Shared product purposes, part lineages and manufacturing incentives identify cohorts where similar decisions may have recurred. Forecast ranks and confirmed population, health or access remain separate fields.
+**v0.9.1 — 2026-11-26. Documentary forecasts; no original hardware measurements.** Precedents are positive inputs to candidate selection. Shared product purposes, part lineages and manufacturing incentives identify cohorts where similar decisions may have recurred. Forecast ranks and confirmed population, health or access remain separate fields.
+
+## Performance anomalies are also a forecast input (v0.9.1)
+
+The October 25, 2023 first-person 170HX review reports an 8 GB-class card with a 1492.99 GB/s computed peak, measured clpeak bandwidth 1165.79–1355.40 GB/s and measured FP32 FMA 394.77 GFLOPS [S87]. The mismatch was observable before later capacity-recovery reports. Keep this performance/part axis alongside historical recurrence and lot analysis. [Performance-gap analysis](docs/performance-gap.md) and [observation ledger](data/performance_gap_observations.csv) add comparator calculations for A30X and MI50 while separating real tests from specifications. v0.9 recurrence tiers remain unchanged.
 
 ## What we predict from precedents
 
